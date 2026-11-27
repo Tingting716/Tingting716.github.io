@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="12 道覆盖人工智能基础、技术、社会、司法与治理的自测题，附详细解析与教师答案速览。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="硅序漫谈｜了解AI">
+  <meta property="og:title" content="学习自测与参考答案 · 硅序漫谈｜了解AI">
+  <meta property="og:description" content="12 道覆盖人工智能基础、技术、社会、司法与治理的自测题，附详细解析与教师答案速览。">
+  <meta property="og:image" content="assets/img/data-700.webp">
+  <title>学习自测与参考答案 · 硅序漫谈｜了解AI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.min.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/site.min.js" defer></script>
+  <script src="assets/js/answers.min.js" defer></script>
+</head>
+<body id="top" data-page="answers">
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden">
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M18 13l-6 6-6-6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16.5H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M8 7h8"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M8 7l-3 6h6L8 7Zm8 0-3 6h6l-3-6Z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/><rect x="10" y="10" width="4" height="4" rx="1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3ZM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15ZM5 3l.7 1.7L7.5 5.4 5.7 6.1 5 7.8l-.7-1.7L2.5 5.4l1.8-.7L5 3Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M19 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.1.4.3.7.6 1 .3.2.7.4 1.1.4h.1a2 2 0 1 1 0 4H21a1.7 1.7 0 0 0-1.6.6Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 11v5M14 11v5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16M7 12h10M10 19h4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 3 8.3 7 10 4-1.7 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.3c-1.1.7-1.7 1.2-1.7 2.7M12 17.5h.01"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M10 11H5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3M20 11h-5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5M12 17h.01"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z"/><path d="M9 21v-7h6v7"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.4-2L20 12M4 12l2.5 5a7 7 0 0 0 11.4-2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21 11.5-8.9 8.9a5 5 0 0 1-7.1-7.1l9.2-9.2a3.4 3.4 0 0 1 4.8 4.8l-9.2 9.2a1.8 1.8 0 0 1-2.5-2.5l8.5-8.5"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">硅序漫谈</span>
+        <span class="brand-sub">了解AI</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a class="nav-link" href="index.html" data-nav="home">首页</a>
+      <a class="nav-link" href="learn.html" data-nav="knowledge">知识体系</a>
+      <div class="nav-item nav-item--works">
+        <button class="nav-link nav-trigger" type="button" id="worksTrigger" aria-expanded="false" aria-controls="worksMega" data-nav="works">作品 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+      </div>
+      <a class="nav-link" href="articles.html" data-nav="articles">文章</a>
+      <a class="nav-link" href="about.html" data-nav="about">关于</a>
+      <a class="nav-link" href="contact.html" data-nav="contact">联系</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-search js-open-search" type="button" aria-label="搜索知识，快捷键 Command K">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span>搜索</span><span class="kbd">⌘K</span>
+      </button>
+      <a class="btn btn--primary header-cta" href="answers.html">学习自测</a>
+      <button class="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="works-mega" id="worksMega" aria-hidden="true" aria-label="作品导航">
+  <div class="mega-grid">
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>项目</div>
+      <div class="mega-links">
+        <a class="mega-link" href="project-justice.html">AI 与司法实践<span>人机协同与程序正义</span></a>
+        <a class="mega-link" href="project-ecology.html">生成式 AI 与信息生态<span>内容生产链的重写</span></a>
+        <a class="mega-link" href="project-learning.html">AI 通识学习路径<span>把教材变成行动</span></a>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>实验</div>
+      <div class="mega-links">
+        <a class="mega-link" href="experiment-verify.html">信息核查实验室<span>三道题练习证据意识</span></a>
+        <a class="mega-link" href="answers.html#quiz">通识自测 12 题<span>立即检验理解</span></a>
+        <a class="mega-link" href="works.html?filter=lab">全部实验<span>浏览互动练习</span></a>
+      </div>
+      <a class="mega-all" href="works.html">查看全部作品 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>资源</div>
+      <div class="mega-links">
+        <a class="mega-link" href="learn.html">系统课程<span>15 个知识点 · 即时练习</span></a>
+        <a class="mega-link" href="articles.html#papers">学术论文专栏<span>五篇值得进入的论文</span></a>
+        <a class="mega-link" href="about.html">教材与内容方法<span>我们的知识框架</span></a>
+        <a class="mega-link" href="answers.html#answer-key">答案速览<span>教师与自学者适用</span></a>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-featured">
+        <div class="mega-featured-media">
+          <span class="mega-featured-tag">精选项目</span>
+          <img src="assets/img/justice-700.webp" width="700" height="467" alt="正义女神手持天平的雕像" loading="lazy" decoding="async">
+        </div>
+        <div class="mega-featured-copy">
+          <p>PROJECT / 01</p>
+          <h3><a href="project-justice.html">AI 与司法实践</a></h3>
+          <a class="text-link" href="project-justice.html">进入项目 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="移动端导航">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-head">
+      <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+      </a>
+      <button class="menu-close" type="button" aria-label="关闭导航菜单"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <button class="mobile-search-btn js-open-search" type="button"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span>搜索知识、文章与项目</span><span class="kbd">⌘K</span></button>
+    <nav class="mobile-nav" aria-label="移动端主导航">
+      <a href="index.html" data-nav="home">首页</a>
+<a href="learn.html" data-nav="knowledge">知识体系</a>
+<details>
+          <summary data-nav="works" class="">作品 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <div class="mobile-subnav">
+            <span class="mobile-subnav__label">项目</span>
+            <a href="project-justice.html">AI 与司法实践</a>
+            <a href="project-ecology.html">生成式 AI 与信息生态</a>
+            <a href="project-learning.html">AI 通识学习路径</a>
+            <span class="mobile-subnav__label">实验与资源</span>
+            <a href="experiment-verify.html">信息核查实验室</a>
+            <a href="answers.html">学习自测与答案</a>
+            <a href="learn.html">系统课程 · 15 讲</a>
+            <a href="works.html">全部作品</a>
+          </div>
+        </details>
+<a href="articles.html" data-nav="articles">文章</a>
+<a href="about.html" data-nav="about">关于</a>
+<a href="contact.html" data-nav="contact">联系</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a class="btn btn--primary" href="answers.html">开始学习自测</a>
+      <p class="mobile-menu-note">内容框架参考《人工智能通识及应用》<br>高等教育出版社 · 唐郑熠 / 林江宏 / 王金水 主编</p>
+    </div>
+  </div>
+</aside>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-shell" role="dialog" aria-modal="true" aria-labelledby="searchDialogTitle">
+    <h2 id="searchDialogTitle" class="sr-only">搜索硅序漫谈</h2>
+    <div class="search-bar">
+      <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+      <label class="sr-only" for="searchInput">搜索知识点、文章或项目</label>
+      <input class="search-input" id="searchInput" type="search" placeholder="搜索知识点、文章或项目…" autocomplete="off" spellcheck="false" aria-controls="searchResults">
+      <button class="menu-close" type="button" aria-label="关闭搜索" data-close-search><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="search-filters" id="searchFilters" role="tablist" aria-label="筛选内容类型"></div>
+    <div class="search-summary"><span id="searchSummary" aria-live="polite">推荐内容</span><span>↑↓ 选择 · Enter 打开 · ESC 关闭</span></div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-foot">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-compass"></use></svg>知识索引覆盖教材 10 章与扩展专题</span>
+      <span>硅序漫谈｜了解AI</span>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" type="button" aria-label="返回页面顶部">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+</button>
+
+<main id="main" class="page page--answers">
+<section class="page-hero" aria-labelledby="answers-title">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="index.html">首页</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">学习自测</span>
+    </nav>
+    <div class="page-hero-row">
+      <div>
+        <div class="eyebrow">Self-check &amp; Answers / 学习自测</div>
+        <h1 id="answers-title">检查你的理解，<br>而不是记住标准答案。</h1>
+        <p class="page-hero-desc">12 道题覆盖人工智能基础、技术原理、社会影响、司法与治理。提交后查看得分与解析；也可以直接展开答案，用于课堂讨论或教师备课。</p>
+      </div>
+      <div class="page-hero-aside" aria-label="自测概况">
+        <div class="page-hero-stat"><strong>12</strong><span>道选择题</span></div>
+        <div class="page-hero-stat"><strong>03</strong><span>学习模块</span></div>
+        <div class="page-hero-stat"><strong>08</strong><span>分钟建议</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="answers-page answers">
+  <div class="container">
+    <div class="quiz-intro">
+      <div class="quiz-intro-row">
+        <p><strong style="color: var(--ink-soft);">使用方式：</strong>选择每道题的答案，点击“提交并查看解析”。页面不会上传你的作答记录，刷新即可重新开始。</p>
+        <div class="quiz-intro-stats">
+          <div class="quiz-intro-stat"><strong data-quiz-total>12</strong><span>题</span></div>
+          <div class="quiz-intro-stat"><strong>3</strong><span>组</span></div>
+          <div class="quiz-intro-stat"><strong>即时</strong><span>反馈</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-layout" id="quiz">
+      <div class="quiz-questions" data-quiz-questions>
+        <div class="quiz-group">
+          <div class="quiz-group-head">
+            <h2>基础与历史</h2><span>01 — 04</span><span class="quiz-group-line" aria-hidden="true"></span>
+          </div>
+
+          <article class="question" id="q1" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">01</span>
+              <h3>通常被视为人工智能学科起点的会议是？</h3>
+              <span class="question-topic">历史</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 1 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q1" value="A"><span class="option-mark">A</span><span>图灵会议</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q1" value="B"><span class="option-mark">B</span><span>达特茅斯会议</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q1" value="C"><span class="option-mark">C</span><span>布莱切利会议</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q1" value="D"><span class="option-mark">D</span><span>阿西洛马会议</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>1956 年夏天，麦卡锡、明斯基、香农等人在达特茅斯学院组织研讨会，“人工智能”作为研究领域由此获得命名。图灵 1950 年的论文提供了重要思想前史，但不是学科命名的会议。</div>
+          </article>
+
+          <article class="question" id="q2" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">02</span>
+              <h3>关于“弱人工智能”与“通用人工智能”，下列表述更准确的是？</h3>
+              <span class="question-topic">概念</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 2 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q2" value="A"><span class="option-mark">A</span><span>当前的 AI 已经普遍具备跨领域通用推理能力。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q2" value="B"><span class="option-mark">B</span><span>通用人工智能通常指能在广泛任务中达到或超过人类水平的假想系统。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q2" value="C"><span class="option-mark">C</span><span>通用人工智能已经是日常消费产品，只是没有公开。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q2" value="D"><span class="option-mark">D</span><span>弱人工智能与通用人工智能没有区别。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>弱人工智能（或专用人工智能）在特定任务中表现优秀；通用人工智能是一个关于广泛能力的理论目标，目前尚无公认的实现。把“在某个基准上表现好”直接称为通用智能，是常见误读。</div>
+          </article>
+
+          <article class="question" id="q3" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">03</span>
+              <h3>人工智能历史上的“寒冬”最能说明什么？</h3>
+              <span class="question-topic">历史</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 3 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q3" value="A"><span class="option-mark">A</span><span>人工智能从未产生真正的技术突破。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q3" value="B"><span class="option-mark">B</span><span>技术发展依赖算力、数据、方法与场景的共同支撑，并非线性进步。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q3" value="C"><span class="option-mark">C</span><span>专家系统已经完全取代了深度学习。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q3" value="D"><span class="option-mark">D</span><span>人工智能已经被科学界永久放弃。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>寒冬不是“技术毫无价值”的证明，而是技术能力、资源投入与社会预期之间失衡的结果。今天的生成式 AI 也同样受到算力、数据、应用与治理条件的共同约束。</div>
+          </article>
+
+          <article class="question" id="q4" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">04</span>
+              <h3>人们常说的“AI 效应”（AI effect）更接近下列哪一种含义？</h3>
+              <span class="question-topic">概念</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 4 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q4" value="A"><span class="option-mark">A</span><span>任何使用 AI 的系统都会提升效率。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q4" value="B"><span class="option-mark">B</span><span>当某项能力变成日常应用后，人们往往不再把它视为“真正的 AI”。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q4" value="C"><span class="option-mark">C</span><span>AI 必然导致大规模失业。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q4" value="D"><span class="option-mark">D</span><span>模型规模越大，智能水平一定越高。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>一旦某种能力被普及，它常常被重新归类为“普通软件功能”。这提醒我们：AI 的边界是动态的，社会认知会随技术应用而变化。</div>
+          </article>
+        </div>
+
+        <div class="quiz-group">
+          <div class="quiz-group-head">
+            <h2>原理与技术</h2><span>05 — 08</span><span class="quiz-group-line" aria-hidden="true"></span>
+          </div>
+
+          <article class="question" id="q5" data-question data-correct="A">
+            <div class="question-head">
+              <span class="question-number">05</span>
+              <h3>监督学习最典型的特征是？</h3>
+              <span class="question-topic">机器学习</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 5 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q5" value="A"><span class="option-mark">A</span><span>使用带标签的数据学习输入与目标之间的映射。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q5" value="B"><span class="option-mark">B</span><span>完全不需要任何数据。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q5" value="C"><span class="option-mark">C</span><span>仅依靠人工编写的固定规则。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q5" value="D"><span class="option-mark">D</span><span>只能用于图像，不能用于文本。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 A。</strong>监督学习通过带标签的样本学习映射，例如用标注过的邮件训练垃圾邮件分类器。无监督学习、自监督学习与强化学习则采用不同的信号结构。</div>
+          </article>
+
+          <article class="question" id="q6" data-question data-correct="A">
+            <div class="question-head">
+              <span class="question-number">06</span>
+              <h3>Transformer 架构的核心机制是？</h3>
+              <span class="question-topic">深度学习</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 6 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q6" value="A"><span class="option-mark">A</span><span>注意力机制（attention）</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q6" value="B"><span class="option-mark">B</span><span>决策树</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q6" value="C"><span class="option-mark">C</span><span>遗传算法</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q6" value="D"><span class="option-mark">D</span><span>人工规则库</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 A。</strong>2017 年提出的 Transformer 使用自注意力机制建模序列中不同位置之间的关系，为后续大规模语言模型提供了关键架构基础。</div>
+          </article>
+
+          <article class="question" id="q7" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">07</span>
+              <h3>大语言模型生成文本的基本机制更接近？</h3>
+              <span class="question-topic">大模型</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 7 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q7" value="A"><span class="option-mark">A</span><span>从固定数据库中复制完整段落。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q7" value="B"><span class="option-mark">B</span><span>根据已有上下文，逐步预测下一个 token。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q7" value="C"><span class="option-mark">C</span><span>由人工在后台即时编写。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q7" value="D"><span class="option-mark">D</span><span>随机拼接网页链接。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>语言模型以“下一 token 预测”为核心训练目标。它学习的是语料中的统计关联，因此能生成流畅文本，也可能生成缺乏事实依据的内容。</div>
+          </article>
+
+          <article class="question" id="q8" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">08</span>
+              <h3>为什么大模型会出现“幻觉”？以下解释更合理的是？</h3>
+              <span class="question-topic">局限</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 8 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q8" value="A"><span class="option-mark">A</span><span>模型拥有自由意志，故意欺骗用户。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q8" value="B"><span class="option-mark">B</span><span>模型以统计模式生成内容，流畅表达不等于事实正确，可能生成缺少依据的细节。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q8" value="C"><span class="option-mark">C</span><span>模型永远不会犯错，问题都出在用户。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q8" value="D"><span class="option-mark">D</span><span>只有使用中文提问时才会出现幻觉。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>幻觉是生成式模型的系统性风险之一，与其训练目标、数据覆盖与推理方式有关。可以通过检索增强、工具调用与事实核验降低，但不能完全消除。</div>
+          </article>
+        </div>
+
+        <div class="quiz-group">
+          <div class="quiz-group-head">
+            <h2>社会 · 司法 · 治理</h2><span>09 — 12</span><span class="quiz-group-line" aria-hidden="true"></span>
+          </div>
+
+          <article class="question" id="q9" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">09</span>
+              <h3>关于“算法偏见”，下列理解最准确的是？</h3>
+              <span class="question-topic">社会</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 9 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q9" value="A"><span class="option-mark">A</span><span>算法会像人一样主动讨厌某些群体。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q9" value="B"><span class="option-mark">B</span><span>数据、目标设定与代理变量可能复制或放大既有的不平等。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q9" value="C"><span class="option-mark">C</span><span>只要代码没有语法错误，算法就不会有偏见。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q9" value="D"><span class="option-mark">D</span><span>算法一定比人类更客观，因此不需要审查。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>算法偏见往往来自历史数据、目标函数与代理变量，而不是程序员的显式恶意。高风险场景需要评估不同群体的错误率、错误代价与救济渠道。</div>
+          </article>
+
+          <article class="question" id="q10" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">10</span>
+              <h3>关于 AI 在司法活动中的合理边界，下列说法正确的是？</h3>
+              <span class="question-topic">司法</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 10 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q10" value="A"><span class="option-mark">A</span><span>AI 可以自动作出最终裁判并直接执行。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q10" value="B"><span class="option-mark">B</span><span>AI 可辅助检索与整理，人类保留独立裁判、说理与纠错责任。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q10" value="C"><span class="option-mark">C</span><span>只要模型准确率足够高，就可以省略程序告知与异议机制。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q10" value="D"><span class="option-mark">D</span><span>AI 可以同时替代法官、律师与当事人。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>司法 AI 应被定位为辅助工具。涉及人身自由、财产与基本权利的裁判，必须保留人类的最终决定、可解释的说理与可进入的救济程序。</div>
+          </article>
+
+          <article class="question" id="q11" data-question data-correct="B">
+            <div class="question-head">
+              <span class="question-number">11</span>
+              <h3>欧盟《人工智能法案》的主要监管思路是？</h3>
+              <span class="question-topic">治理</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 11 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q11" value="A"><span class="option-mark">A</span><span>禁止一切人工智能应用。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q11" value="B"><span class="option-mark">B</span><span>按风险等级配置差异化义务，并对高风险系统提出更严格要求。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q11" value="C"><span class="option-mark">C</span><span>只监管聊天机器人。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q11" value="D"><span class="option-mark">D</span><span>不涉及透明度与人工监督。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 B。</strong>欧盟采用横向立法与风险分级思路：禁止不可接受风险的应用，对高风险系统设置数据治理、透明度与人工监督等义务，并对通用人工智能模型作专门规定。</div>
+          </article>
+
+          <article class="question" id="q12" data-question data-correct="C">
+            <div class="question-head">
+              <span class="question-number">12</span>
+              <h3>面对生成式 AI 合成内容，哪项治理思路更合理？</h3>
+              <span class="question-topic">治理</span>
+            </div>
+            <div class="question-options" role="radiogroup" aria-label="第 12 题选项">
+              <label class="question-option" data-option="A"><input type="radio" name="q12" value="A"><span class="option-mark">A</span><span>一律删除所有 AI 生成内容。</span></label>
+              <label class="question-option" data-option="B"><input type="radio" name="q12" value="B"><span class="option-mark">B</span><span>鼓励平台隐藏内容来源，避免用户困惑。</span></label>
+              <label class="question-option" data-option="C"><input type="radio" name="q12" value="C"><span class="option-mark">C</span><span>通过内容标识、来源凭证、平台治理与个人核查，提升可追溯性。</span></label>
+              <label class="question-option" data-option="D"><input type="radio" name="q12" value="D"><span class="option-mark">D</span><span>只依赖 AI 检测工具，用户不需要判断。</span></label>
+            </div>
+            <div class="question-answer" data-answer hidden><strong>答案 C。</strong>合成内容治理需要多层次的制度基础设施。检测工具只是信号之一，来源透明、内容标识、平台责任与个人核查共同构成更可靠的防线。</div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="quiz-aside" aria-label="答题进度与操作">
+        <div class="quiz-score-card">
+          <div class="quiz-score-label">Your progress</div>
+          <div class="quiz-progress"><strong data-quiz-answered>0</strong><span>/ <span data-quiz-total>12</span> 已作答</span></div>
+          <div class="quiz-progress-bar"><span data-quiz-progress></span></div>
+          <div class="quiz-aside-meta"><span>正确 <span data-quiz-correct>0</span> 题</span><span>满分 12</span></div>
+          <div class="quiz-actions">
+            <button class="btn btn--primary" type="button" data-quiz-submit>提交并查看解析</button>
+            <button class="btn btn--secondary" type="button" data-quiz-reveal>展开全部答案</button>
+            <button class="btn btn--ghost" type="button" data-quiz-reset>重新作答</button>
+          </div>
+          <div class="quiz-result" data-quiz-result hidden aria-live="polite"></div>
+          <p class="quiz-note">答案与解析仅用于学习讨论。若用于课堂，建议先独立作答，再进行小组讨论。</p>
+        </div>
+        <div class="quiz-aside-links">
+          <a href="#answer-key">跳到答案速览 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <a href="articles.html#papers">学术论文专栏 <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+          <a href="project-learning.html">学习路径 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<section class="answer-key" id="answer-key" aria-labelledby="answer-key-title">
+  <div class="container">
+    <div class="answer-key-head">
+      <div>
+        <div class="eyebrow">Answer Key / 答案速览</div>
+        <h2 id="answer-key-title">教师与自学者的答案页。</h2>
+      </div>
+      <p>答案不是终点。每道题都对应一个可以继续追问的概念、案例或制度问题。</p>
+    </div>
+    <div class="answer-key-grid">
+      <div class="answer-table-wrap">
+        <table class="answer-table">
+          <caption class="sr-only">12 道选择题的参考答案</caption>
+          <thead><tr><th>题号</th><th>答案</th><th>考点</th><th>回到题目</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td>B</td><td>学科起点</td><td><a href="#q1">查看</a></td></tr>
+            <tr><td>02</td><td>B</td><td>AI 的分类</td><td><a href="#q2">查看</a></td></tr>
+            <tr><td>03</td><td>B</td><td>技术周期</td><td><a href="#q3">查看</a></td></tr>
+            <tr><td>04</td><td>B</td><td>AI 效应</td><td><a href="#q4">查看</a></td></tr>
+            <tr><td>05</td><td>A</td><td>监督学习</td><td><a href="#q5">查看</a></td></tr>
+            <tr><td>06</td><td>A</td><td>Transformer</td><td><a href="#q6">查看</a></td></tr>
+            <tr><td>07</td><td>B</td><td>下一词预测</td><td><a href="#q7">查看</a></td></tr>
+            <tr><td>08</td><td>B</td><td>大模型幻觉</td><td><a href="#q8">查看</a></td></tr>
+            <tr><td>09</td><td>B</td><td>算法偏见</td><td><a href="#q9">查看</a></td></tr>
+            <tr><td>10</td><td>B</td><td>司法 AI 边界</td><td><a href="#q10">查看</a></td></tr>
+            <tr><td>11</td><td>B</td><td>欧盟风险分级</td><td><a href="#q11">查看</a></td></tr>
+            <tr><td>12</td><td>C</td><td>合成内容治理</td><td><a href="#q12">查看</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="open-answers">
+        <span class="kicker">OPEN QUESTIONS · 开放题参考答案</span>
+        <details class="open-answer" open>
+          <summary>如果法官使用 AI 辅助，应如何向当事人说明？<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <div class="open-answer-body"><strong>参考思路：</strong>说明使用了何种工具、用于哪个环节（如检索、整理或风险提示）、人类法官是否独立复核、AI 输出是否被采纳及其理由；同时告知当事人提出异议与申请人工审查的渠道。核心不是披露技术细节，而是让程序可理解、可质疑。</div>
+        </details>
+        <details class="open-answer">
+          <summary>生成式 AI 让内容成本下降，最需要优先建立什么制度？<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <div class="open-answer-body"><strong>参考思路：</strong>优先建立合成内容标识与来源追溯机制，并配合平台透明度、纠错申诉与独立研究。不能只依赖检测工具；也不能把所有核验成本转嫁给个体用户。</div>
+        </details>
+        <details class="open-answer">
+          <summary>用一句话向同学解释大模型为什么会产生幻觉。<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <div class="open-answer-body"><strong>参考答案：</strong>因为大模型学习的是语言中的统计模式，并据此预测接下来的内容，它生成“听起来很对”的句子，并不等于核对过事实；所以流畅、自信和真实并不是同一件事。</div>
+        </details>
+        <details class="open-answer">
+          <summary>AI 治理应优先保护谁？请给出你的理由。<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <div class="open-answer-body"><strong>参考思路：</strong>没有唯一答案。可以从基本权利、弱势群体、信息弱势者、劳动者或社会整体信任等角度论证。较好的回答会说明“保护什么权利、在什么情境下、由谁承担义务、如何救济”，而不是只列出原则口号。</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+        </a>
+        <p>面向大学生的 AI 通识伴学空间。以《人工智能通识及应用》教材为骨架，用问题、案例与练习建立可迁移的判断力。</p>
+        <p class="footer-note">内容框架参考《人工智能通识及应用》<br>唐郑熠、林江宏、王金水 主编 · 高等教育出版社<br>课程编辑组独立维护</p>
+      </div>
+      <div class="footer-col">
+        <h3>学习</h3>
+        <div class="footer-links">
+          <a href="learn.html">知识体系</a>
+          <a href="works.html">作品与实践</a>
+          <a href="answers.html">学习自测</a>
+          <a href="answers.html#answer-key">答案速览</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <div class="footer-links">
+          <a href="articles.html">全部文章</a>
+          <a href="articles.html#papers">学术论文专栏</a>
+          <a href="about.html">关于本课</a>
+          <a href="about.html#framework">教材框架</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>联系</h3>
+        <div class="footer-links">
+          <a href="contact.html">交流与共建</a>
+          <a href="mailto:hello@ai-literacy.cn">hello@ai-literacy.cn</a>
+          <a href="contact.html#faq">常见问题</a>
+          <a href="dashboard.html">内容后台（演示）</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 硅序漫谈｜了解AI · 大学生 AI 伴学作品。本站为独立学习与教学设计项目，非出版机构官方网站；教材封面与出版信息版权归原作者及出版社所有。部分摄影素材来自 Unsplash。内容仅用于学习交流，具体政策与法律请以官方最新文件为准。</p>
+      <div class="footer-bottom-meta">
+        <a href="https://mall.hep.com.cn/goods-48620.html" target="_blank" rel="noopener noreferrer">教材信息 <svg class="icon icon--12" aria-hidden="true"><use href="#i-external"></use></svg></a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

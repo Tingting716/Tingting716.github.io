@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="比较欧盟、中国、美国与国际组织的治理路径，理解人工智能全球治理的关键分歧。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="硅序漫谈｜了解AI">
+  <meta property="og:title" content="全球 AI 治理：从原则共识到规则落地 · 硅序漫谈｜了解AI">
+  <meta property="og:description" content="比较欧盟、中国、美国与国际组织的治理路径，理解人工智能全球治理的关键分歧。">
+  <meta property="og:image" content="assets/img/network-700.webp">
+  <title>全球 AI 治理：从原则共识到规则落地 · 硅序漫谈｜了解AI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.min.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/site.min.js" defer></script>
+</head>
+<body class="article-page-body" id="top" data-page="articles">
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden">
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M18 13l-6 6-6-6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16.5H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M8 7h8"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M8 7l-3 6h6L8 7Zm8 0-3 6h6l-3-6Z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/><rect x="10" y="10" width="4" height="4" rx="1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3ZM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15ZM5 3l.7 1.7L7.5 5.4 5.7 6.1 5 7.8l-.7-1.7L2.5 5.4l1.8-.7L5 3Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M19 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.1.4.3.7.6 1 .3.2.7.4 1.1.4h.1a2 2 0 1 1 0 4H21a1.7 1.7 0 0 0-1.6.6Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 11v5M14 11v5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16M7 12h10M10 19h4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 3 8.3 7 10 4-1.7 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.3c-1.1.7-1.7 1.2-1.7 2.7M12 17.5h.01"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M10 11H5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3M20 11h-5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5M12 17h.01"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z"/><path d="M9 21v-7h6v7"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.4-2L20 12M4 12l2.5 5a7 7 0 0 0 11.4-2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21 11.5-8.9 8.9a5 5 0 0 1-7.1-7.1l9.2-9.2a3.4 3.4 0 0 1 4.8 4.8l-9.2 9.2a1.8 1.8 0 0 1-2.5-2.5l8.5-8.5"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">硅序漫谈</span>
+        <span class="brand-sub">了解AI</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a class="nav-link" href="index.html" data-nav="home">首页</a>
+      <a class="nav-link" href="learn.html" data-nav="knowledge">知识体系</a>
+      <div class="nav-item nav-item--works">
+        <button class="nav-link nav-trigger" type="button" id="worksTrigger" aria-expanded="false" aria-controls="worksMega" data-nav="works">作品 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+      </div>
+      <a class="nav-link is-current" href="articles.html" data-nav="articles" aria-current="page">文章</a>
+      <a class="nav-link" href="about.html" data-nav="about">关于</a>
+      <a class="nav-link" href="contact.html" data-nav="contact">联系</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-search js-open-search" type="button" aria-label="搜索知识，快捷键 Command K">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span>搜索</span><span class="kbd">⌘K</span>
+      </button>
+      <a class="btn btn--primary header-cta" href="answers.html">学习自测</a>
+      <button class="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="works-mega" id="worksMega" aria-hidden="true" aria-label="作品导航">
+  <div class="mega-grid">
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>项目</div>
+      <div class="mega-links">
+        <a class="mega-link" href="project-justice.html">AI 与司法实践<span>人机协同与程序正义</span></a>
+        <a class="mega-link" href="project-ecology.html">生成式 AI 与信息生态<span>内容生产链的重写</span></a>
+        <a class="mega-link" href="project-learning.html">AI 通识学习路径<span>把教材变成行动</span></a>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>实验</div>
+      <div class="mega-links">
+        <a class="mega-link" href="experiment-verify.html">信息核查实验室<span>三道题练习证据意识</span></a>
+        <a class="mega-link" href="answers.html#quiz">通识自测 12 题<span>立即检验理解</span></a>
+        <a class="mega-link" href="works.html?filter=lab">全部实验<span>浏览互动练习</span></a>
+      </div>
+      <a class="mega-all" href="works.html">查看全部作品 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>资源</div>
+      <div class="mega-links">
+        <a class="mega-link" href="learn.html">系统课程<span>15 个知识点 · 即时练习</span></a>
+        <a class="mega-link" href="articles.html#papers">学术论文专栏<span>五篇值得进入的论文</span></a>
+        <a class="mega-link" href="about.html">教材与内容方法<span>我们的知识框架</span></a>
+        <a class="mega-link" href="answers.html#answer-key">答案速览<span>教师与自学者适用</span></a>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-featured">
+        <div class="mega-featured-media">
+          <span class="mega-featured-tag">精选项目</span>
+          <img src="assets/img/justice-700.webp" width="700" height="467" alt="正义女神手持天平的雕像" loading="lazy" decoding="async">
+        </div>
+        <div class="mega-featured-copy">
+          <p>PROJECT / 01</p>
+          <h3><a href="project-justice.html">AI 与司法实践</a></h3>
+          <a class="text-link" href="project-justice.html">进入项目 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="移动端导航">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-head">
+      <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+      </a>
+      <button class="menu-close" type="button" aria-label="关闭导航菜单"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <button class="mobile-search-btn js-open-search" type="button"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span>搜索知识、文章与项目</span><span class="kbd">⌘K</span></button>
+    <nav class="mobile-nav" aria-label="移动端主导航">
+      <a href="index.html" data-nav="home">首页</a>
+<a href="learn.html" data-nav="knowledge">知识体系</a>
+<details>
+          <summary data-nav="works" class="">作品 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <div class="mobile-subnav">
+            <span class="mobile-subnav__label">项目</span>
+            <a href="project-justice.html">AI 与司法实践</a>
+            <a href="project-ecology.html">生成式 AI 与信息生态</a>
+            <a href="project-learning.html">AI 通识学习路径</a>
+            <span class="mobile-subnav__label">实验与资源</span>
+            <a href="experiment-verify.html">信息核查实验室</a>
+            <a href="answers.html">学习自测与答案</a>
+            <a href="learn.html">系统课程 · 15 讲</a>
+            <a href="works.html">全部作品</a>
+          </div>
+        </details>
+<a href="articles.html" data-nav="articles" class="is-current">文章</a>
+<a href="about.html" data-nav="about">关于</a>
+<a href="contact.html" data-nav="contact">联系</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a class="btn btn--primary" href="answers.html">开始学习自测</a>
+      <p class="mobile-menu-note">内容框架参考《人工智能通识及应用》<br>高等教育出版社 · 唐郑熠 / 林江宏 / 王金水 主编</p>
+    </div>
+  </div>
+</aside>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-shell" role="dialog" aria-modal="true" aria-labelledby="searchDialogTitle">
+    <h2 id="searchDialogTitle" class="sr-only">搜索硅序漫谈</h2>
+    <div class="search-bar">
+      <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+      <label class="sr-only" for="searchInput">搜索知识点、文章或项目</label>
+      <input class="search-input" id="searchInput" type="search" placeholder="搜索知识点、文章或项目…" autocomplete="off" spellcheck="false" aria-controls="searchResults">
+      <button class="menu-close" type="button" aria-label="关闭搜索" data-close-search><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="search-filters" id="searchFilters" role="tablist" aria-label="筛选内容类型"></div>
+    <div class="search-summary"><span id="searchSummary" aria-live="polite">推荐内容</span><span>↑↓ 选择 · Enter 打开 · ESC 关闭</span></div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-foot">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-compass"></use></svg>知识索引覆盖教材 10 章与扩展专题</span>
+      <span>硅序漫谈｜了解AI</span>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" type="button" aria-label="返回页面顶部">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+</button>
+
+<main id="main" class="page page--articles">
+<div class="reading-progress" aria-hidden="true"></div>
+
+<section class="article-hero" aria-labelledby="article-title">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="index.html">首页</a><span class="sep" aria-hidden="true">›</span>
+      <a href="articles.html">文章</a><span class="sep" aria-hidden="true">›</span>
+      <span aria-current="page">全球 AI 治理</span>
+    </nav>
+    <div class="article-hero-inner">
+      <div class="article-category">治理观察 · 政策</div>
+      <h1 id="article-title">全球 AI 治理：从原则共识到规则落地</h1>
+      <p class="article-dek">人工智能的风险不尊重国界，但规则仍主要由主权国家制定。理解欧盟、中国、美国与国际组织的不同路径，是进入全球 AI 治理讨论的起点。</p>
+      <div class="article-byline">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg><strong>课程编辑组</strong></span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><time datetime="2026-09-30">2026 年 9 月 30 日</time></span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>约 16 分钟阅读</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg>全球比较</span>
+      </div>
+    </div>
+    <figure class="article-cover">
+      <div class="article-cover-media">
+        <img src="assets/img/network-1400.webp" width="1400" height="934" alt="从太空俯瞰地球的夜间灯光" fetchpriority="high" decoding="async">
+      </div>
+      <figcaption><span>图片来源：Unsplash</span><span>模型可以跨境部署，规则却仍以国界为基本单位。</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="article-body-wrap">
+  <div class="container">
+    <div class="article-layout">
+      <aside class="article-toc" aria-label="文章目录">
+        <div class="article-toc-title">On this page</div>
+        <nav>
+          <a href="#why">01 / 为什么需要治理</a>
+          <a href="#approaches">02 / 三条主要路径</a>
+          <a href="#timeline">03 / 关键时间线</a>
+          <a href="#comparison">04 / 同题不同答</a>
+          <a href="#challenges">05 / 尚未解决的难题</a>
+          <a href="#learners">06 / 学习者能做什么</a>
+        </nav>
+        <div class="article-toc-meta">政策不断演进，本文以公开官方文件为基础，具体适用请以最新文本为准。</div>
+      </aside>
+
+      <article class="article-content">
+        <details class="article-toc-mobile">
+          <summary>本文目录 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <nav>
+            <a href="#why">01 / 为什么需要治理</a>
+            <a href="#approaches">02 / 三条主要路径</a>
+            <a href="#timeline">03 / 关键时间线</a>
+            <a href="#comparison">04 / 同题不同答</a>
+            <a href="#challenges">05 / 尚未解决的难题</a>
+            <a href="#learners">06 / 学习者能做什么</a>
+          </nav>
+        </details>
+
+        <p>人工智能治理的核心问题并不是“要不要管”，而是“管什么、谁来管、用什么工具管”。技术具有通用性，同一个模型可以用于医疗、教育、金融、司法，也可以用于监控、操纵与欺诈。因此，治理不可能只依赖单一部门的许可，也无法仅靠企业自律。</p>
+        <p>与此同时，AI 的风险具有跨境外溢性：模型可以远程调用，数据可以跨境流动，合成内容可以瞬间传播。全球治理因此同时呈现两种趋势：一是主权国家根据自己的法律传统与产业战略形成不同规则；二是国际组织试图在原则、评估与能力建设上建立最低限度的共同语言。</p>
+
+        <div class="article-keypoints">
+          <div class="article-keypoints-head"><svg class="icon" aria-hidden="true"><use href="#i-target"></use></svg>阅读要点</div>
+          <ul>
+            <li>欧盟偏向综合立法与风险分级，中国强调发展与安全并重、敏捷治理，美国更依赖行业与部门路径。</li>
+            <li>国际组织主要提供原则、评估与合作平台，硬约束仍有限。</li>
+            <li>管辖权、开源模型、算力治理、责任分配与全球公平，是当前治理的难点。</li>
+            <li>“原则共识”与“可执行规则”之间，仍有很长的制度距离。</li>
+          </ul>
+        </div>
+
+        <h2 id="why">一、为什么 AI 治理如此困难？</h2>
+        <p>AI 的通用性让监管对象难以界定。监管芯片、模型、应用还是平台？训练一次大模型的资源门槛很高，但开源模型可以被广泛下载与微调；合成内容可以完全在本地生成。传统的“产品—销售—使用”监管链条，很难套用到模型生态上。</p>
+        <p>此外，AI 风险往往具有概率性与不可见性。偏见可能只在特定群体上出现，幻觉可能只在特定问题上触发，系统性影响可能要在大规模部署后才显现。这要求治理从“事后处罚”转向“持续评估与监测”。</p>
+        <p>最后是价值冲突。隐私保护与公共安全、创新激励与基本权利、开放共享与滥用防控，很难有一个放之四海皆准的平衡点。治理的本质，是在这些冲突之间做出可被解释、可被修正的选择。</p>
+
+        <h2 id="approaches">二、三条主要路径</h2>
+        <h3>欧盟：综合立法与风险分级</h3>
+        <p>欧盟《人工智能法案》采取横向立法的方式，对不同风险等级设置不同义务：禁止不可接受风险的应用，对高风险系统提出数据治理、风险管理、透明度与人工监督要求，对通用人工智能模型设置专门义务。该法案于 2024 年 8 月 1 日生效，并按阶段实施。其核心逻辑是“以基本权利为底线，按风险配置监管强度”。</p>
+        <h3>中国：发展与安全并重，敏捷治理</h3>
+        <p>中国的治理路径更加场景化、渐进式。针对算法推荐、深度合成、生成式人工智能服务与生成内容标识，分别建立管理规定与技术要求，强调服务提供者的主体责任、内容安全、算法备案与标识义务。2023 年发布的《全球人工智能治理倡议》提出以人为本、智能向善等原则；2025 年 9 月 1 日起施行的《人工智能生成合成内容标识办法》进一步细化了合成内容的标识要求。</p>
+        <p>这一路径的特点是：在鼓励产业发展的同时，通过具体场景的规则快速回应风险；不同部门、不同层级的规定形成组合，但也带来规则衔接与执行一致性的挑战。</p>
+        <h3>美国：行业路径与联邦—州分权</h3>
+        <p>美国联邦层面长期更强调创新优先与行业自律，规则多由具体部门在既有权限内推进；与此同时，部分州在隐私、算法决策与高风险 AI 上走得更快。由于联邦与州、不同政府任期之间政策方向可能变化，企业面临一定的不确定性。美国路径的核心问题不是“有没有规则”，而是“规则如何协调”。</p>
+        <h3>国际组织：原则、评估与能力建设</h3>
+        <p>联合国、联合国教科文组织、 OECD 等机构主要提供原则框架与合作平台。UNESCO 于 2021 年通过《人工智能伦理建议书》，强调人权、尊严、透明与人类监督；OECD 的 AI 原则成为许多国家政策的重要参考；联合国大会 2024 年通过有关安全、可靠和可信人工智能的决议，并推动国际科学评估与全球对话。它们的作用不是替代国内法，而是降低跨国协调的认知成本。</p>
+
+        <h2 id="timeline">三、关键时间线：从原则走向规则</h2>
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead><tr><th>时间</th><th>进展</th><th>治理意义</th></tr></thead>
+            <tbody>
+              <tr><td>2019</td><td>OECD 通过 AI 原则</td><td>形成较早的国际政策共识框架</td></tr>
+              <tr><td>2021</td><td>UNESCO 通过 AI 伦理建议书</td><td>确立全球伦理标准，强调人权与监督</td></tr>
+              <tr><td>2023</td><td>中国发布《全球人工智能治理倡议》；多国举行 AI 安全峰会</td><td>治理议题进入国家间高层对话</td></tr>
+              <tr><td>2024</td><td>欧盟《人工智能法案》生效；联合国大会通过 AI 决议</td><td>硬法与软法并行推进</td></tr>
+              <tr><td>2025</td><td>中国《人工智能生成合成内容标识办法》施行</td><td>合成内容透明度进入具体执行</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>需要强调的是，时间线并不等于“问题已解决”。规则发布只是开始，真正的效果取决于执行能力、技术评估、企业合规与公众监督。不同国家之间的规则也可能产生摩擦，例如对“高风险”的定义、对透明度义务的范围、对开源模型的责任分配等。</p>
+
+        <h2 id="comparison">四、同题不同答：一张比较表</h2>
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead><tr><th>维度</th><th>欧盟</th><th>中国</th><th>美国</th></tr></thead>
+            <tbody>
+              <tr><td>主要工具</td><td>综合立法 + 风险分级</td><td>场景化规章 + 敏捷治理</td><td>部门规则 + 行业自律 + 州法</td></tr>
+              <tr><td>核心目标</td><td>基本权利保护与单一市场</td><td>发展、安全与可控</td><td>创新领先与国家安全</td></tr>
+              <tr><td>合规重点</td><td>风险管理、透明度、人工监督</td><td>备案、内容安全、标识、主体责任</td><td>部门权限、消费者保护、出口管制等</td></tr>
+              <tr><td>主要挑战</td><td>执行成本与创新平衡</td><td>规则衔接与一致性</td><td>联邦—州协调与政策连续性</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>把三条路径理解为“谁更先进”没有太大意义。它们回应的是不同的政治结构、法律传统与产业位置。对学习者而言，更重要的是理解每种选择背后的价值排序与制度约束。</p>
+
+        <h2 id="challenges">五、尚未解决的难题</h2>
+        <h3>管辖权与责任链</h3>
+        <p>一个模型在 A 国训练，在 B 国部署，由 C 国用户使用，内容在 D 国传播。谁有权监管？谁承担责任？现有规则通常以服务提供者或部署者为责任中心，但供应链上游的模型开发者、数据提供者与下游的微调者如何分担责任，仍缺乏清晰答案。</p>
+        <h3>开源模型的治理</h3>
+        <p>开源促进创新与可审查性，也降低滥用门槛。对开源模型施加与闭源模型相同的义务，可能损害研究生态；完全不设边界，又可能使风险外溢。可行的方向包括分阶段义务、用途限制、模型卡与安全评估，但需要更多实践检验。</p>
+        <h3>算力与全球公平</h3>
+        <p>训练前沿模型需要巨额算力、数据与人才。若治理规则只由技术领先国家制定，全球南方国家可能既无法参与规则，也难以获得技术收益。能力建设、技术转移与公共算力基础设施，应成为全球治理议程的一部分。</p>
+        <h3>评估标准的互认</h3>
+        <p>不同国家使用不同的安全评估、基准与合规程序。缺乏互认会增加企业成本，也会留下监管套利空间。建立透明、可复现、可比较的评估方法，是未来合作的关键。</p>
+
+        <h2 id="learners">六、学习者能做什么？</h2>
+        <p>全球治理看似遥远，但它最终落在具体产品、具体课程与具体社区。作为学生或教师，可以从三个层次参与：</p>
+        <ul>
+          <li><strong>理解规则：</strong>阅读官方文件原文，区分法律义务、政策倡议与媒体解读。</li>
+          <li><strong>练习判断：</strong>用案例检验“风险分级”“透明度”“人工监督”等概念，而不只是记住术语。</li>
+          <li><strong>参与公共讨论：</strong>在课堂、社区与专业领域提出“谁受影响、谁有权决定、如何纠错”的问题。</li>
+        </ul>
+        <p>治理不是技术专家的专属领域。教育者、记者、法律工作者与普通公民的参与，决定了规则能否真正保护人，而不只是保护机构。</p>
+
+        <div class="article-end">
+          <div class="article-tags">
+            <span class="tag">全球治理</span>
+            <span class="tag">欧盟 AI Act</span>
+            <span class="tag">中国方案</span>
+            <span class="tag">AI 伦理</span>
+            <span class="tag">政策比较</span>
+          </div>
+          <div class="article-actions">
+            <div class="share-buttons">
+              <button class="share-btn js-copy-link" type="button">
+                <svg class="icon" aria-hidden="true"><use href="#i-link"></use></svg>复制链接
+              </button>
+            </div>
+            <a class="text-link" href="articles.html">返回文章列表
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="article-references">
+          <h2>参考与延伸</h2>
+          <ol>
+            <li>唐郑熠、林江宏、王金水主编：《人工智能通识及应用》，高等教育出版社，2026 年。第 2 章及拓展议题。</li>
+            <li>UNESCO, <em>Recommendation on the Ethics of Artificial Intelligence</em>, 2021. <a href="https://www.unesco.org/ethics-ai/en/recommendation" target="_blank" rel="noopener noreferrer">unesco.org</a></li>
+            <li>European Commission, <em>A European approach to artificial intelligence</em>. <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">digital-strategy.ec.europa.eu</a></li>
+            <li>OECD, <em>AI Principles</em>. <a href="https://www.oecd.org/en/topics/sub-issues/ai-principles.html" target="_blank" rel="noopener noreferrer">oecd.org</a></li>
+            <li>国家互联网信息办公室等：《人工智能生成合成内容标识办法》及答记者问，2025 年。 <a href="https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm" target="_blank" rel="noopener noreferrer">cac.gov.cn</a></li>
+            <li>United Nations, <em>Seizing the opportunities of safe, secure and trustworthy artificial intelligence systems for sustainable development</em>, A/RES/78/265, 2024. <a href="https://digitallibrary.un.org/record/4043244" target="_blank" rel="noopener noreferrer">digitallibrary.un.org</a></li>
+          </ol>
+        </div>
+
+        <div class="article-next">
+          <a href="article-ai-society.html"><span>上一篇 · 社会</span><strong>效率红利之外，AI 的社会成本由谁承担？</strong></a>
+          <a href="project-justice.html"><span>关联项目</span><strong>AI 与司法实践</strong></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+        </a>
+        <p>面向大学生的 AI 通识伴学空间。以《人工智能通识及应用》教材为骨架，用问题、案例与练习建立可迁移的判断力。</p>
+        <p class="footer-note">内容框架参考《人工智能通识及应用》<br>唐郑熠、林江宏、王金水 主编 · 高等教育出版社<br>课程编辑组独立维护</p>
+      </div>
+      <div class="footer-col">
+        <h3>学习</h3>
+        <div class="footer-links">
+          <a href="learn.html">知识体系</a>
+          <a href="works.html">作品与实践</a>
+          <a href="answers.html">学习自测</a>
+          <a href="answers.html#answer-key">答案速览</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <div class="footer-links">
+          <a href="articles.html">全部文章</a>
+          <a href="articles.html#papers">学术论文专栏</a>
+          <a href="about.html">关于本课</a>
+          <a href="about.html#framework">教材框架</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>联系</h3>
+        <div class="footer-links">
+          <a href="contact.html">交流与共建</a>
+          <a href="mailto:hello@ai-literacy.cn">hello@ai-literacy.cn</a>
+          <a href="contact.html#faq">常见问题</a>
+          <a href="dashboard.html">内容后台（演示）</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 硅序漫谈｜了解AI · 大学生 AI 伴学作品。本站为独立学习与教学设计项目，非出版机构官方网站；教材封面与出版信息版权归原作者及出版社所有。部分摄影素材来自 Unsplash。内容仅用于学习交流，具体政策与法律请以官方最新文件为准。</p>
+      <div class="footer-bottom-meta">
+        <a href="https://mall.hep.com.cn/goods-48620.html" target="_blank" rel="noopener noreferrer">教材信息 <svg class="icon icon--12" aria-hidden="true"><use href="#i-external"></use></svg></a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="从类案检索到裁判辅助，梳理人工智能进入司法场景后的机会、风险与人机协同边界。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="硅序漫谈｜了解AI">
+  <meta property="og:title" content="AI 与司法实践 · 硅序漫谈｜了解AI">
+  <meta property="og:description" content="从类案检索到裁判辅助，梳理人工智能进入司法场景后的机会、风险与人机协同边界。">
+  <meta property="og:image" content="assets/img/justice-700.webp">
+  <title>AI 与司法实践 · 硅序漫谈｜了解AI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.min.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/site.min.js" defer></script>
+</head>
+<body id="top" data-page="works">
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden">
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M18 13l-6 6-6-6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16.5H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M8 7h8"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M8 7l-3 6h6L8 7Zm8 0-3 6h6l-3-6Z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/><rect x="10" y="10" width="4" height="4" rx="1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3ZM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15ZM5 3l.7 1.7L7.5 5.4 5.7 6.1 5 7.8l-.7-1.7L2.5 5.4l1.8-.7L5 3Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M19 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.1.4.3.7.6 1 .3.2.7.4 1.1.4h.1a2 2 0 1 1 0 4H21a1.7 1.7 0 0 0-1.6.6Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 11v5M14 11v5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16M7 12h10M10 19h4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 3 8.3 7 10 4-1.7 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.3c-1.1.7-1.7 1.2-1.7 2.7M12 17.5h.01"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M10 11H5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3M20 11h-5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5M12 17h.01"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z"/><path d="M9 21v-7h6v7"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.4-2L20 12M4 12l2.5 5a7 7 0 0 0 11.4-2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21 11.5-8.9 8.9a5 5 0 0 1-7.1-7.1l9.2-9.2a3.4 3.4 0 0 1 4.8 4.8l-9.2 9.2a1.8 1.8 0 0 1-2.5-2.5l8.5-8.5"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">硅序漫谈</span>
+        <span class="brand-sub">了解AI</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a class="nav-link" href="index.html" data-nav="home">首页</a>
+      <a class="nav-link" href="learn.html" data-nav="knowledge">知识体系</a>
+      <div class="nav-item nav-item--works">
+        <button class="nav-link nav-trigger is-current" type="button" id="worksTrigger" aria-expanded="false" aria-controls="worksMega" aria-current="page" data-nav="works">作品 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+      </div>
+      <a class="nav-link" href="articles.html" data-nav="articles">文章</a>
+      <a class="nav-link" href="about.html" data-nav="about">关于</a>
+      <a class="nav-link" href="contact.html" data-nav="contact">联系</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-search js-open-search" type="button" aria-label="搜索知识，快捷键 Command K">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span>搜索</span><span class="kbd">⌘K</span>
+      </button>
+      <a class="btn btn--primary header-cta" href="answers.html">学习自测</a>
+      <button class="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="works-mega" id="worksMega" aria-hidden="true" aria-label="作品导航">
+  <div class="mega-grid">
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>项目</div>
+      <div class="mega-links">
+        <a class="mega-link" href="project-justice.html">AI 与司法实践<span>人机协同与程序正义</span></a>
+        <a class="mega-link" href="project-ecology.html">生成式 AI 与信息生态<span>内容生产链的重写</span></a>
+        <a class="mega-link" href="project-learning.html">AI 通识学习路径<span>把教材变成行动</span></a>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>实验</div>
+      <div class="mega-links">
+        <a class="mega-link" href="experiment-verify.html">信息核查实验室<span>三道题练习证据意识</span></a>
+        <a class="mega-link" href="answers.html#quiz">通识自测 12 题<span>立即检验理解</span></a>
+        <a class="mega-link" href="works.html?filter=lab">全部实验<span>浏览互动练习</span></a>
+      </div>
+      <a class="mega-all" href="works.html">查看全部作品 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>资源</div>
+      <div class="mega-links">
+        <a class="mega-link" href="learn.html">系统课程<span>15 个知识点 · 即时练习</span></a>
+        <a class="mega-link" href="articles.html#papers">学术论文专栏<span>五篇值得进入的论文</span></a>
+        <a class="mega-link" href="about.html">教材与内容方法<span>我们的知识框架</span></a>
+        <a class="mega-link" href="answers.html#answer-key">答案速览<span>教师与自学者适用</span></a>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-featured">
+        <div class="mega-featured-media">
+          <span class="mega-featured-tag">精选项目</span>
+          <img src="assets/img/justice-700.webp" width="700" height="467" alt="正义女神手持天平的雕像" loading="lazy" decoding="async">
+        </div>
+        <div class="mega-featured-copy">
+          <p>PROJECT / 01</p>
+          <h3><a href="project-justice.html">AI 与司法实践</a></h3>
+          <a class="text-link" href="project-justice.html">进入项目 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="移动端导航">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-head">
+      <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+      </a>
+      <button class="menu-close" type="button" aria-label="关闭导航菜单"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <button class="mobile-search-btn js-open-search" type="button"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span>搜索知识、文章与项目</span><span class="kbd">⌘K</span></button>
+    <nav class="mobile-nav" aria-label="移动端主导航">
+      <a href="index.html" data-nav="home">首页</a>
+<a href="learn.html" data-nav="knowledge">知识体系</a>
+<details>
+          <summary data-nav="works" class="is-current">作品 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <div class="mobile-subnav">
+            <span class="mobile-subnav__label">项目</span>
+            <a href="project-justice.html">AI 与司法实践</a>
+            <a href="project-ecology.html">生成式 AI 与信息生态</a>
+            <a href="project-learning.html">AI 通识学习路径</a>
+            <span class="mobile-subnav__label">实验与资源</span>
+            <a href="experiment-verify.html">信息核查实验室</a>
+            <a href="answers.html">学习自测与答案</a>
+            <a href="learn.html">系统课程 · 15 讲</a>
+            <a href="works.html">全部作品</a>
+          </div>
+        </details>
+<a href="articles.html" data-nav="articles">文章</a>
+<a href="about.html" data-nav="about">关于</a>
+<a href="contact.html" data-nav="contact">联系</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a class="btn btn--primary" href="answers.html">开始学习自测</a>
+      <p class="mobile-menu-note">内容框架参考《人工智能通识及应用》<br>高等教育出版社 · 唐郑熠 / 林江宏 / 王金水 主编</p>
+    </div>
+  </div>
+</aside>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-shell" role="dialog" aria-modal="true" aria-labelledby="searchDialogTitle">
+    <h2 id="searchDialogTitle" class="sr-only">搜索硅序漫谈</h2>
+    <div class="search-bar">
+      <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+      <label class="sr-only" for="searchInput">搜索知识点、文章或项目</label>
+      <input class="search-input" id="searchInput" type="search" placeholder="搜索知识点、文章或项目…" autocomplete="off" spellcheck="false" aria-controls="searchResults">
+      <button class="menu-close" type="button" aria-label="关闭搜索" data-close-search><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="search-filters" id="searchFilters" role="tablist" aria-label="筛选内容类型"></div>
+    <div class="search-summary"><span id="searchSummary" aria-live="polite">推荐内容</span><span>↑↓ 选择 · Enter 打开 · ESC 关闭</span></div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-foot">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-compass"></use></svg>知识索引覆盖教材 10 章与扩展专题</span>
+      <span>硅序漫谈｜了解AI</span>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" type="button" aria-label="返回页面顶部">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+</button>
+
+<main id="main" class="page page--works">
+<section class="detail-hero" aria-labelledby="project-title">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="index.html">首页</a><span class="sep" aria-hidden="true">›</span>
+      <a href="works.html">作品</a><span class="sep" aria-hidden="true">›</span>
+      <a href="works.html?filter=ai">AI 工具</a><span class="sep" aria-hidden="true">›</span>
+      <span aria-current="page">项目详情</span>
+    </nav>
+
+    <div class="detail-hero-grid">
+      <div class="detail-hero-copy">
+        <div class="eyebrow">Project 01 / 研究项目</div>
+        <h1 id="project-title">AI 与司法实践</h1>
+        <p>当算法可以检索类案、整理卷宗、辅助生成文书，司法活动中的“效率”与“正义”会如何重新相遇？本项目以人机协同为线索，梳理 AI 进入法庭的机会、风险与不可让渡的人类判断。</p>
+        <div class="detail-hero-tags">
+          <span class="tag tag--blue">AI × 法律</span>
+          <span class="tag">人机协同</span>
+          <span class="tag">程序正义</span>
+          <span class="tag">可解释性</span>
+          <span class="tag">责任伦理</span>
+        </div>
+        <div class="detail-meta-line">
+          <span><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>关联教材第 2 章</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>约 12 分钟</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg>研究笔记 · 2026.11</span>
+        </div>
+      </div>
+      <figure class="detail-hero-media">
+        <img src="assets/img/justice-1400.webp" width="1400" height="934" alt="正义女神手持天平的雕像，背景为温暖的墙面" fetchpriority="high" decoding="async">
+        <figcaption>正义不仅要求结果正确，也要求过程可以被看见、被质疑与被告知。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="detail-summary" aria-label="项目摘要">
+  <div class="container">
+    <dl class="detail-summary-grid">
+      <div class="detail-summary-item">
+        <dt><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg>核心问题</dt>
+        <dd>AI 能在哪些司法环节辅助人类，哪些决定必须由人保留？</dd>
+      </div>
+      <div class="detail-summary-item">
+        <dt><svg class="icon" aria-hidden="true"><use href="#i-layers"></use></svg>分析路径</dt>
+        <dd>应用场景 → 人机协同流程 → 程序风险 → 制度边界。</dd>
+      </div>
+      <div class="detail-summary-item">
+        <dt><svg class="icon" aria-hidden="true"><use href="#i-target"></use></svg>核心结论</dt>
+        <dd>以人类裁判为中心，以透明度、可审计与可救济为底线。</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<div class="container detail-layout">
+  <div class="detail-content">
+    <section aria-labelledby="context">
+      <div class="eyebrow">01 / 问题背景</div>
+      <h2 id="context">司法需要技术，但技术不能定义正义。</h2>
+      <p class="detail-lead">司法活动既处理大量重复性信息，也承载着无法被“效率”完全概括的判断。人工智能擅长前者，却无法单独承担后者。</p>
+      <p>在智慧法院、在线诉讼与法律科技的发展中，AI 已进入电子卷宗、庭审语音转录、类案检索、文书校对、证据整理等场景。它们可以降低检索成本、减少格式错误，也可能改变法官注意力的分配方式。真正需要讨论的，不是“要不要使用 AI”，而是“在什么位置、以什么权限、受什么监督地使用”。</p>
+      <p>教材第 2 章讨论的透明、公平、隐私与责任原则，在司法场域会被放大：一个微小的数据偏差，可能影响一个人的自由、财产与名誉；一个难以解释的分数，可能侵蚀当事人对裁判理由的理解与接受。</p>
+      <div class="detail-callout">
+        <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+        <p><strong>本项目的基本立场</strong>算法可以辅助“看见”，不能替代“判断”；可以提供线索，不能替代裁判说理。人类法官始终保有最终决定权、说明义务与纠错机制。</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="map">
+      <div class="eyebrow">02 / 应用地图</div>
+      <h2 id="map">AI 介入司法活动的四个层级。</h2>
+      <p>越接近最终裁判，技术介入的边界应越清晰，监督与说明的要求也应越高。</p>
+      <div class="detail-table-wrap">
+        <table class="detail-table">
+          <thead>
+            <tr><th>介入层级</th><th>典型应用</th><th>主要价值</th><th>需要守住什么</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>信息处理</td><td>电子卷宗、庭审转录、文档校对</td><td>减少重复劳动，提高记录准确性</td><td>数据安全、原始材料可核验</td></tr>
+            <tr><td>知识检索</td><td>类案推送、法条检索、案例摘要</td><td>扩展检索范围，辅助法律研究</td><td>检索偏差、案例可比性、来源标注</td></tr>
+            <tr><td>分析辅助</td><td>证据关系梳理、风险评估、量刑参考</td><td>发现关联，提示需要关注的问题</td><td>不将风险分数等同于事实结论</td></tr>
+            <tr><td>裁判与执行</td><td>在线调解、执行线索发现</td><td>提高纠纷解决可及性与执行效率</td><td>程序告知、当事人异议、司法审查</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>同一项技术在不同层级可能产生完全不同的后果。把“辅助检索”与“自动生成裁判结论”混为一谈，是讨论 AI 司法风险时最常见的误区之一。</p>
+    </section>
+
+    <section aria-labelledby="flow">
+      <div class="eyebrow">03 / 人机协同</div>
+      <h2 id="flow">一个可以被审计的工作流，比一个“聪明的模型”更重要。</h2>
+      <p>让 AI 的输出进入可追溯的流程，而不是成为一个不可见的中介。下面这条路径强调“谁在何时做了什么、依据是什么”。</p>
+      <div class="flow" aria-label="人机协同工作流">
+        <div class="flow-step">
+          <span class="flow-num">01</span>
+          <h4>案件进入</h4>
+          <p>明确案由、程序阶段与可用材料。</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">02</span>
+          <h4>AI 辅助整理</h4>
+          <p>检索、摘要、标注，保留原始出处。</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">03</span>
+          <h4>法官独立审查</h4>
+          <p>核对事实、证据与法律适用。</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">04</span>
+          <h4>说理与记录</h4>
+          <p>说明AI用途、采纳与排除的理由。</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num">05</span>
+          <h4>救济与监督</h4>
+          <p>保留异议、上诉与事后审计。</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="risks">
+      <div class="eyebrow">04 / 关键风险</div>
+      <h2 id="risks">效率不会自动带来公正。</h2>
+      <h3>自动化偏见：人更容易相信“系统”。</h3>
+      <p>当算法给出看似精确的风险评分，审查者可能降低自己的警惕。这种“自动化偏见”意味着，技术辅助反而可能削弱独立判断。界面设计应明确置信度、数据来源与适用范围，并鼓励质疑。</p>
+      <h3>数据偏差：历史不会因为被数字化而变得正确。</h3>
+      <p>训练数据来自过去的执法与裁判记录。如果过去的实践存在选择性执法或结构性不平等，模型可能学习并放大这些模式。数据越多，不代表偏差越小；关键在于数据如何被采集、标注与使用。</p>
+      <h3>可解释性：不是给出一张热力图就够了。</h3>
+      <p>对当事人而言，重要的不是模型内部的技术解释，而是影响其权利的决定能够被理解、被质疑。可解释性必须与告知、听证、异议和救济制度结合，才具有程序意义。</p>
+      <h3>责任归属：谁为错误建议负责？</h3>
+      <p>当AI的建议导致判断偏差，责任不能消失在“系统自动生成”之中。需要明确开发者、采购方、使用者与管理者各自的责任边界，并保留完整日志与人工复核记录。</p>
+    </section>
+
+    <section aria-labelledby="boundary">
+      <div class="eyebrow">05 / 边界建议</div>
+      <h2 id="boundary">把“人在回路中”落到制度细节。</h2>
+      <ul>
+        <li><strong>人类最终决定：</strong>禁止将涉及人身自由、重大财产与基本权利的裁判完全交由自动化系统。</li>
+        <li><strong>用途透明：</strong>告知当事人AI在案件处理中的用途、范围与限制，不用技术术语遮蔽。</li>
+        <li><strong>数据最小化：</strong>只使用与案件相关、来源合法的数据，避免把敏感信息无差别喂给模型。</li>
+        <li><strong>可审计日志：</strong>记录模型版本、输入依据、输出内容、采纳情况与人工修改。</li>
+        <li><strong>独立评估：</strong>在上线前评估准确率、偏差与失效模式，并在使用中持续监测。</li>
+        <li><strong>可救济：</strong>当事人有权知道是否使用了AI辅助、对相关结论提出异议并获得人工审查。</li>
+      </ul>
+      <p>这些原则并非拒绝技术，而是让技术在一个可以纠错、可以问责的系统中发挥作用。对司法而言，程序的可见性与参与性，本身就是正义的一部分。</p>
+      <div class="detail-next">
+        <div>
+          <div class="detail-next-label">Related Project</div>
+          <h3>继续阅读：生成式 AI 与信息生态</h3>
+        </div>
+        <a class="text-link" href="project-ecology.html">查看项目
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <aside class="detail-aside" aria-label="项目信息">
+    <div class="detail-card">
+      <div class="detail-card-title">Project Information</div>
+      <dl class="detail-info">
+        <div><dt>项目类型</dt><dd>跨学科研究</dd></div>
+        <div><dt>议题领域</dt><dd>AI · 法律 · 伦理</dd></div>
+        <div><dt>教材关联</dt><dd>第 2 章</dd></div>
+        <div><dt>适合对象</dt><dd>学生 · 教师 · 自学者</dd></div>
+        <div><dt>最近更新</dt><dd>2026 年 11 月</dd></div>
+      </dl>
+    </div>
+    <div class="detail-card">
+      <div class="detail-card-title">核心提醒</div>
+      <h3>用 AI 提高效率，用人守住边界。</h3>
+      <p>司法 AI 的价值不在于替代判断，而在于让人有更多时间处理真正需要判断的部分。</p>
+      <a class="text-link" href="article-ai-governance.html">延伸阅读：全球治理
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+      </a>
+    </div>
+    <div class="detail-card">
+      <div class="detail-card-title">继续探索</div>
+      <a class="text-link" href="works.html">返回作品列表
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+      </a>
+      <a class="text-link" href="answers.html">司法议题自测
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+      </a>
+    </div>
+  </aside>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+        </a>
+        <p>面向大学生的 AI 通识伴学空间。以《人工智能通识及应用》教材为骨架，用问题、案例与练习建立可迁移的判断力。</p>
+        <p class="footer-note">内容框架参考《人工智能通识及应用》<br>唐郑熠、林江宏、王金水 主编 · 高等教育出版社<br>课程编辑组独立维护</p>
+      </div>
+      <div class="footer-col">
+        <h3>学习</h3>
+        <div class="footer-links">
+          <a href="learn.html">知识体系</a>
+          <a href="works.html">作品与实践</a>
+          <a href="answers.html">学习自测</a>
+          <a href="answers.html#answer-key">答案速览</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <div class="footer-links">
+          <a href="articles.html">全部文章</a>
+          <a href="articles.html#papers">学术论文专栏</a>
+          <a href="about.html">关于本课</a>
+          <a href="about.html#framework">教材框架</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>联系</h3>
+        <div class="footer-links">
+          <a href="contact.html">交流与共建</a>
+          <a href="mailto:hello@ai-literacy.cn">hello@ai-literacy.cn</a>
+          <a href="contact.html#faq">常见问题</a>
+          <a href="dashboard.html">内容后台（演示）</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 硅序漫谈｜了解AI · 大学生 AI 伴学作品。本站为独立学习与教学设计项目，非出版机构官方网站；教材封面与出版信息版权归原作者及出版社所有。部分摄影素材来自 Unsplash。内容仅用于学习交流，具体政策与法律请以官方最新文件为准。</p>
+      <div class="footer-bottom-meta">
+        <a href="https://mall.hep.com.cn/goods-48620.html" target="_blank" rel="noopener noreferrer">教材信息 <svg class="icon icon--12" aria-hidden="true"><use href="#i-external"></use></svg></a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

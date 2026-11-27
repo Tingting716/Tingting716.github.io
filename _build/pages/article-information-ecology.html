@@ -1,0 +1,195 @@
+<div class="reading-progress" aria-hidden="true"></div>
+
+<section class="article-hero" aria-labelledby="article-title">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="index.html">首页</a><span class="sep" aria-hidden="true">›</span>
+      <a href="articles.html">文章</a><span class="sep" aria-hidden="true">›</span>
+      <span aria-current="page">生成式 AI 与信息生态</span>
+    </nav>
+    <div class="article-hero-inner">
+      <div class="article-category">研究 · 信息生态</div>
+      <h1 id="article-title">生成式 AI 与信息生态：当内容开始自我繁殖</h1>
+      <p class="article-dek">内容生产的边际成本趋近于零之后，一个社会最稀缺的资源不再是信息，而是确认、判断与共同事实。理解生成式 AI，必须同时理解它如何改变“我们相信一件事”的过程。</p>
+      <div class="article-byline">
+        <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-user"></use></svg><strong>课程编辑组</strong></span>
+        <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-calendar"></use></svg><time datetime="2026-11-12">2026 年 11 月 12 日</time></span>
+        <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-clock"></use></svg>约 18 分钟阅读</span>
+        <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-book"></use></svg>关联教材第 6—7 章</span>
+      </div>
+    </div>
+    <figure class="article-cover">
+      <div class="article-cover-media">
+        <img src="assets/img/newspaper-1400.webp" width="1400" height="934" alt="成叠报纸的特写，象征信息生产和公共讨论" fetchpriority="high" decoding="async">
+      </div>
+      <figcaption><span>图片来源：Unsplash</span><span>信息更多，不等于理解更多。</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="article-body-wrap">
+  <div class="container">
+    <div class="article-layout">
+      <aside class="article-toc" aria-label="文章目录">
+        <div class="article-toc-title">On this page</div>
+        <nav>
+          <a href="#chain">01 / 内容生产链的重写</a>
+          <a href="#how-models-work">02 / 会生成，不等于知道</a>
+          <a href="#risks">03 / 四种风险叠加</a>
+          <a href="#verification">04 / 把怀疑变成动作</a>
+          <a href="#governance">05 / 透明度与制度</a>
+          <a href="#education">06 / 教育能做什么</a>
+          <a href="#conclusion">07 / 判断力留在回路中</a>
+        </nav>
+        <div class="article-toc-meta">内容框架参考《人工智能通识及应用》。<br>延伸政策与论文见文末来源。</div>
+      </aside>
+
+      <article class="article-content">
+        <details class="article-toc-mobile">
+          <summary>本文目录 <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-chevron-down"></use></svg></summary>
+          <nav>
+            <a href="#chain">01 / 内容生产链的重写</a>
+            <a href="#how-models-work">02 / 会生成，不等于知道</a>
+            <a href="#risks">03 / 四种风险叠加</a>
+            <a href="#verification">04 / 把怀疑变成动作</a>
+            <a href="#governance">05 / 透明度与制度</a>
+            <a href="#education">06 / 教育能做什么</a>
+            <a href="#conclusion">07 / 判断力留在回路中</a>
+          </nav>
+        </details>
+
+        <p>在人类历史的大部分时间里，信息是稀缺的。写下一段文字需要识字、纸张与印刷；拍摄一张照片需要设备、光线与在场。生成式人工智能改变了这个前提：文字、图像、音频与视频都可以在几秒内被合成，而且成本持续下降。</p>
+        <p>这不是一次简单的工具升级。它改变的是信息生产、分发、消费与验证之间的关系。当“内容”不再稀缺，社会需要重新设计“相信”的机制。</p>
+
+        <div class="article-keypoints">
+          <div class="article-keypoints-head"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-target"></use></svg>阅读要点</div>
+          <ul>
+            <li>生成式 AI 的核心能力来自统计模式学习，而不是对世界的直接理解。</li>
+            <li>幻觉、深度伪造、低质内容扩张与认知操纵，往往同时发生、相互放大。</li>
+            <li>核查不是“看一眼”的直觉，而是一套可以重复的证据动作。</li>
+            <li>真正的信息素养包含知识、技能与价值判断，不能简化为“会写提示词”。</li>
+          </ul>
+        </div>
+
+        <h2 id="chain">一、内容生产链被重写</h2>
+        <p>传统信息生产链大致可以分为：采访与收集、写作与编辑、审核与发布、分发与消费。每一个环节都有成本，也因此形成了职业分工和质量控制。生成式 AI 并没有让这些环节消失，但它让每个环节都可以被自动化和再组合。</p>
+        <p>一篇看似完整的报道，可以在没有采访的情况下生成；一张“现场照片”，可以由扩散模型合成；一段“专家访谈”音频，可以模仿声线。更微妙的是，这些内容还可以被再次喂给模型、被自动改写、被批量分发，形成一条自我繁殖的内容供应链。</p>
+        <blockquote>
+          <p>“信息的丰富造成注意力的贫乏。”</p>
+          <cite>Herbert A. Simon，1971</cite>
+        </blockquote>
+        <p>注意力一直有限，但在生成式 AI 之前，内容供给的瓶颈在一定程度上限制了注意力的争夺。今天，这个瓶颈正在消失。平台可以通过模型生产海量变体，针对不同人群进行测试与优化。结果不只是“假新闻更多”，而是每个人都可能进入一个为自身偏好定制的信息微环境。</p>
+
+        <h2 id="how-models-work">二、为什么“会生成”不等于“知道”</h2>
+        <p>以大语言模型为例，它通过海量文本学习词语与上下文之间的统计关联。在生成时，模型根据已有上下文，逐步预测下一个最可能的词元（token）。Transformer 中的注意力机制让模型能够有效利用长距离上下文，大规模预训练又赋予了它广泛的语言能力。</p>
+        <p>但这与人类“知道”一件事并不相同。模型的输出是对训练分布中模式的组合与延伸，不是对事实的独立核验，也没有天然的“我不知道”机制。它可以用非常流畅的语气生成错误信息，甚至生成看起来规范的引用。为了减少这类问题，研究者发展了检索增强生成（RAG）、工具调用、对齐训练与事实性评估，但这些方法降低风险，并不能消除风险。</p>
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <caption>能力与限制：同一机制的两面</caption>
+            <thead><tr><th>表现</th><th>背后的能力</th><th>风险边界</th></tr></thead>
+            <tbody>
+              <tr><td>流畅写作</td><td>学习语言模式与文体结构</td><td>流畅不等于真实，语气自信也不是证据</td></tr>
+              <tr><td>知识问答</td><td>压缩训练语料中的关联</td><td>可能过时、混淆或捏造具体细节</td></tr>
+              <tr><td>多模态生成</td><td>学习图像、声音与文本的对应关系</td><td>可制造难以凭肉眼识别的合成内容</td></tr>
+              <tr><td>工具调用</td><td>连接搜索、计算与外部系统</td><td>工具结果仍需核验，权限与责任需约束</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>因此，“AI 说的”不能成为独立信源。它最多是一个可以提出假设、整理材料、生成初稿的协作者。最终的事实判断，仍需回到原始调查、公开数据、当事方与可验证记录。</p>
+
+        <h2 id="risks">三、四种风险正在叠加</h2>
+        <p>关于生成式 AI 的信息风险，讨论常常聚焦于“假内容”。但真实的信息生态更复杂：假内容、低质内容、注意力操纵与制度信任下降，会相互强化。</p>
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead><tr><th>风险</th><th>你可能会看到</th><th>优先动作</th></tr></thead>
+            <tbody>
+              <tr><td>幻觉</td><td>不存在的论文、错误的数据、混合的来源</td><td>回到原始出处；找不到就标注“未核实”</td></tr>
+              <tr><td>深度伪造</td><td>声音、人脸、视频被合成或移花接木</td><td>寻找最早版本、完整语境与独立信源</td></tr>
+              <tr><td>低质内容扩张</td><td>批量生成、同质化、SEO 导向的空洞文章</td><td>关注信息增量、作者与编辑过程</td></tr>
+              <tr><td>认知操纵</td><td>情绪化标题、断章取义、只呈现单一立场</td><td>主动接触异质信源，区分事实与主张</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>特别需要警惕“检测工具万能论”。合成与检测是一场持续的技术博弈，检测结果本身也可能出错。更可持续的方向，是把来源追溯、内容凭证、编辑透明与人工核查结合起来。检测工具只能提供一个信号，不能替代判断流程。</p>
+
+        <h2 id="verification">四、把怀疑变成可执行的动作</h2>
+        <p>当我们说“不要轻信”，往往给出的是一个态度，而不是方法。信息素养需要把态度转化为动作。下面这条路径脱胎于新闻核查中的横向阅读与来源追溯实践，适合课堂与日常使用。</p>
+        <div class="flow" aria-label="信息核查四步法">
+          <div class="flow-step"><span class="flow-num">01</span><h4>停一下</h4><p>识别情绪钩子与转发冲动。</p></div>
+          <div class="flow-step"><span class="flow-num">02</span><h4>找来源</h4><p>确认最早发布者、时间与完整语境。</p></div>
+          <div class="flow-step"><span class="flow-num">03</span><h4>横向比较</h4><p>离开当前页面，寻找独立信源。</p></div>
+          <div class="flow-step"><span class="flow-num">04</span><h4>保留不确定</h4><p>区分“未证实”与“已证伪”。</p></div>
+        </div>
+        <p><strong>第一步是情绪识别。</strong>不是所有强烈情绪都意味着内容虚假，但“必须立刻转发”的紧迫感通常是操纵的目标。先命名自己的情绪，再决定下一步。</p>
+        <p><strong>第二步是追溯来源。</strong>截图、转发与二次剪辑会剥离语境。使用反向图片搜索、关键词检索与平台时间线，找到最早版本、发布者与上下文。</p>
+        <p><strong>第三步是横向阅读。</strong>不要只在当前页面里找“更多细节”，而是打开新的标签页，看独立媒体、专业机构、政府或原始数据如何描述同一事件。</p>
+        <p><strong>第四步是表达不确定性。</strong>“我暂时无法确认”是一个成熟的结论，而不是失败。把“未证实”当作“假”，和把“看起来合理”当作“真”，同样会破坏公共判断。</p>
+
+        <h2 id="governance">五、透明度与制度：个人无法独自承担</h2>
+        <p>把信息核查全部推给个体是不公平的。平台、模型提供者、内容发布者与公共机构，掌握着用户无法接触的数据与设计权。一个负责任的信息生态，至少需要三类基础设施。</p>
+        <h3>1. 来源与合成内容的可见性</h3>
+        <p>内容凭证（例如 C2PA 标准）尝试为数字内容附加可验证的来源与编辑信息。中国自 2025 年 9 月 1 日起施行《人工智能生成合成内容标识办法》，要求对 AI 生成合成内容进行标识；欧盟《人工智能法案》也对深度合成内容的透明度作出规定。这些制度的方向，是让“这段内容从哪里来”成为可查询的信息，而不是只靠用户猜。</p>
+        <h3>2. 平台激励与治理责任</h3>
+        <p>推荐系统如何放大情绪、如何界定“高质量内容”、如何提供纠错与申诉，是平台治理的核心。透明度报告不能只是合规装饰，而应让外部研究者能够检验平台的实际效果。</p>
+        <h3>3. 可进入的公共讨论</h3>
+        <p>治理规则不应只由技术公司与政府闭门制定。教师、记者、残障群体、创作者与普通用户，都需要在规则形成过程中拥有发言权。否则，“可信信息”很可能只服务于最有能力定义它的人。</p>
+
+        <h2 id="education">六、教育能做什么：不要只教提示词</h2>
+        <p>学校正在快速引入 AI 工具。但如果 AI 素养被简化为“会写提示词”，学生学到的只是操作技巧，而不是判断能力。更完整的 AI 素养至少包括三个层面。</p>
+        <ul>
+          <li><strong>知识：</strong>理解模型如何训练、生成与出错，知道能力边界。</li>
+          <li><strong>技能：</strong>能够拆解任务、核验来源、保护隐私、记录过程。</li>
+          <li><strong>价值：</strong>愿意为自己的使用方式负责，并能讨论公平、权利与公共善。</li>
+        </ul>
+        <p>在评价方式上，过程证据比成品更重要。与其只检查一篇论文是否“写得好”，不如要求学生提交：使用了什么工具、如何提问、哪些内容被核验、哪些被拒绝、最终如何修改。这样，AI 成为学习过程的一部分，而不是替代学习的黑箱。</p>
+        <p>同样重要的是，教师要为学生保留“不知道”的空间。AI 可以快速给出答案，但真正的学习往往发生在追问、比较与修正之中。把速度降下来，把证据留下来。</p>
+
+        <h2 id="conclusion">七、结语：把判断力留在回路中</h2>
+        <p>生成式 AI 不会让真相消失，但它会让“看起来像真相”的内容变得极其便宜。面对这样的环境，社会需要的不是更响亮的口号，而是更可靠的基础设施和更扎实的个人能力。</p>
+        <p>对个体而言，最实际的变化是：把“先看来源”变成默认动作，把“发布前核验”变成职业习惯，把“AI 只是协作者”变成清晰的使用边界。对制度而言，最重要的是让来源可见、让责任可追、让纠错可进入。</p>
+        <p>内容可以自我繁殖，但判断不能自动继承。我们需要主动把判断力留在回路中。</p>
+
+        <div class="article-end">
+          <div class="article-tags">
+            <span class="tag">生成式 AI</span>
+            <span class="tag">信息生态</span>
+            <span class="tag">信息素养</span>
+            <span class="tag">平台治理</span>
+            <span class="tag">深度伪造</span>
+          </div>
+          <div class="article-actions">
+            <div class="share-buttons">
+              <button class="share-btn js-copy-link" type="button">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-link"></use></svg>复制链接
+              </button>
+              <a class="share-btn" href="mailto:?subject=%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%94%9F%E6%80%81&body=%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB%EF%BC%9A">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-mail"></use></svg>邮件分享
+              </a>
+            </div>
+            <a class="text-link" href="articles.html">返回文章列表
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="article-references">
+          <h2 id="references">参考与延伸</h2>
+          <ol>
+            <li>唐郑熠、林江宏、王金水主编：《人工智能通识及应用》，高等教育出版社，2026 年。第 6—7 章及伦理法律相关章节。</li>
+            <li>UNESCO, <em>Recommendation on the Ethics of Artificial Intelligence</em>, 2021. <a href="https://www.unesco.org/ethics-ai/en/recommendation" target="_blank" rel="noopener noreferrer">unesco.org</a></li>
+            <li>European Commission, <em>A European approach to artificial intelligence</em>（含 EU AI Act 实施时间表）. <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">digital-strategy.ec.europa.eu</a></li>
+            <li>国家互联网信息办公室等：《人工智能生成合成内容标识办法》及答记者问，2025 年 3 月。 <a href="https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm" target="_blank" rel="noopener noreferrer">cac.gov.cn</a></li>
+            <li>Coalition for Content Provenance and Authenticity (C2PA), technical specifications. <a href="https://c2pa.org/specifications/specifications/2.1/index.html" target="_blank" rel="noopener noreferrer">c2pa.org</a></li>
+            <li>Herbert A. Simon, “Designing Organizations for an Information-Rich World,” 1971.</li>
+            <li>Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S., “On the Dangers of Stochastic Parrots,” FAccT 2021. <a href="https://doi.org/10.1145/3442188.3445922" target="_blank" rel="noopener noreferrer">DOI</a></li>
+          </ol>
+        </div>
+
+        <div class="article-next">
+          <a href="article-ai-history.html"><span>下一篇 · 历史</span><strong>人工智能七十年：从符号到生成</strong></a>
+          <a href="experiment-verify.html"><span>互动实验</span><strong>用三道题练习信息核查</strong></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

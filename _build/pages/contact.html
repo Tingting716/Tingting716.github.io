@@ -1,0 +1,144 @@
+<section class="page-hero page-hero--surface" aria-labelledby="contact-page-title">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="index.html">首页</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">联系</span>
+    </nav>
+    <div class="page-hero-row">
+      <div>
+        <div class="eyebrow">Contact &amp; Collaboration / 联系与共建</div>
+        <h1 id="contact-page-title">把你的问题带过来。</h1>
+        <p class="page-hero-desc">课程共建、内容纠错、学习交流或媒体联络，都欢迎。我们更愿意讨论具体问题，而不是交换泛泛的“AI 趋势”。</p>
+      </div>
+      <div class="page-hero-aside" aria-label="联系信息">
+        <div class="page-hero-stat"><strong>2—3</strong><span>个工作日回复</span></div>
+        <div class="page-hero-stat"><strong>01</strong><span>个公开邮箱</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-page">
+  <div class="container contact-layout">
+    <div class="contact-copy">
+      <div class="eyebrow">Start a Conversation</div>
+      <h2>先描述具体情境，<br>比介绍“对 AI 很感兴趣”更有帮助。</h2>
+      <p>告诉我们你在教什么、学什么、做什么，或者发现了哪一处需要修正。清晰的问题能让交流更快进入实质。</p>
+
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="contact-info-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-mail"></use></svg></span>
+          <div>
+            <h3>一般交流与内容反馈</h3>
+            <a href="mailto:hello@ai-literacy.cn">hello@ai-literacy.cn</a>
+            <p>文章纠错、项目建议、使用问题。</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-book"></use></svg></span>
+          <div>
+            <h3>课程与课堂共建</h3>
+            <p>如果你正在使用教材或本站设计 AI 通识课程，欢迎交流教学方案、任务与评价方式。</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-users"></use></svg></span>
+          <div>
+            <h3>学生项目与学习社群</h3>
+            <p>可以分享你的实践项目、阅读笔记或对某个议题的不同意见。请避免提交敏感个人信息。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-callout" style="margin-top: 24px;">
+        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-shield"></use></svg>
+        <p><strong>关于本站</strong>本站是一个独立学习项目，不是《人工智能通识及应用》的官方配套网站。表单为前端演示，不会将内容上传至服务器存储。</p>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <h2>留下一条消息</h2>
+      <p>带 * 的字段为必填。提交后会进行本地校验；真实发送请使用页面生成的邮件链接。</p>
+      <form class="contact-form" data-contact-form action="mailto:hello@ai-literacy.cn" method="post" enctype="text/plain">
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label" for="contactName">你的称呼 *</label>
+            <input class="form-control" id="contactName" name="name" type="text" autocomplete="name" placeholder="例如：林老师" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="contactEmail">邮箱 *</label>
+            <input class="form-control" id="contactEmail" name="email" type="email" autocomplete="email" placeholder="name@example.com" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="contactRole">身份</label>
+            <select class="form-control" id="contactRole" name="role">
+              <option value="学生">学生</option>
+              <option value="教师">教师 / 教育工作者</option>
+              <option value="研究者">研究者</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="contactSubject">主题 *</label>
+            <select class="form-control" id="contactSubject" name="subject" required>
+              <option value="课程与教学交流">课程与教学交流</option>
+              <option value="内容纠错与建议">内容纠错与建议</option>
+              <option value="学生项目交流">学生项目交流</option>
+              <option value="媒体与转载">媒体与转载</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <label class="form-label" for="contactMessage">消息内容 *</label>
+            <textarea class="form-control" id="contactMessage" name="message" rows="5" maxlength="1200" placeholder="请简单描述你的问题或建议。若涉及具体文章，请附上页面名称。" required></textarea>
+          </div>
+          <div class="form-field form-field--full">
+            <label class="form-check">
+              <input type="checkbox" name="consent" value="yes" required>
+              <span>我同意为了回复本次联系而使用以上信息。本站不会将这些信息用于营销或上传存储。<a href="about.html">了解内容说明</a></span>
+            </label>
+          </div>
+        </div>
+        <div class="form-footer">
+          <button class="btn btn--primary" type="submit">校验并生成邮件
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-send"></use></svg>
+          </button>
+          <div class="form-status" data-form-status aria-live="polite">提示：本站为静态演示，不会自动发送或保存消息。</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="contact-faq" id="faq" aria-labelledby="faq-title">
+  <div class="container contact-faq-grid">
+    <div class="contact-faq-intro">
+      <div>
+        <div class="eyebrow">FAQ / 常见问题</div>
+        <h2 id="faq-title">在联系之前，也许你想先知道。</h2>
+      </div>
+      <p>关于内容来源、使用许可、适用对象和更新机制的一些说明。</p>
+    </div>
+    <div class="faq-list" data-accordion>
+      <details class="faq-item" open>
+        <summary>本站与《人工智能通识及应用》是什么关系？<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-chevron-down"></use></svg></summary>
+        <div class="faq-body">本站是一个独立学习项目，以该教材的十章结构作为内容骨架，并补充公开政策与学术资料。它并非出版社官方配套网站，也不代表教材主编或出版社立场。教材信息与封面版权归原权利人所有，具体书目信息可查看<a href="https://mall.hep.com.cn/goods-48620.html" target="_blank" rel="noopener noreferrer">高等教育出版社页面</a>。</div>
+      </details>
+      <details class="faq-item">
+        <summary>内容可以用于课程或教学演示吗？<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-chevron-down"></use></svg></summary>
+        <div class="faq-body">欢迎在非商业教学中参考与使用，并注明来源。若需要公开转载、商业使用或改编，请先通过邮箱联系我们，并注明具体页面与使用场景。教材原文、封面与第三方图片的权利不因本站使用而改变。</div>
+      </details>
+      <details class="faq-item">
+        <summary>适合什么学段的学生？<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-chevron-down"></use></svg></summary>
+        <div class="faq-body">内容主要面向高等教育阶段的学生与教师，也适合具备高中以上阅读能力的自学者。司法、治理与部分技术文章包含较复杂的概念，教师可根据课程目标选择使用，并补充背景材料。</div>
+      </details>
+      <details class="faq-item">
+        <summary>政策与论文内容多久更新一次？<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-chevron-down"></use></svg></summary>
+        <div class="faq-body">内容按主题逐步更新，文章会标注发布日期与参考来源。AI 政策与法律仍在快速演进，使用具体条款时请以官方最新文本为准。如果发现事实错误或失效链接，欢迎通过邮箱反馈。</div>
+      </details>
+      <details class="faq-item">
+        <summary>可以提交自己的项目或学习笔记吗？<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-chevron-down"></use></svg></summary>
+        <div class="faq-body">可以。请简要说明项目问题、你的角色、使用的资料与方法，以及你希望讨论的具体问题。请勿提交他人的隐私信息、未授权的敏感数据或需要保密的材料。</div>
+      </details>
+    </div>
+  </div>
+</section>

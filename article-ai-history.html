@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="回望人工智能的七个发展阶段，理解技术周期、路径依赖与今天的生成式 AI。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="硅序漫谈｜了解AI">
+  <meta property="og:title" content="人工智能七十年：从符号到生成 · 硅序漫谈｜了解AI">
+  <meta property="og:description" content="回望人工智能的七个发展阶段，理解技术周期、路径依赖与今天的生成式 AI。">
+  <meta property="og:image" content="assets/img/data-700.webp">
+  <title>人工智能七十年：从符号到生成 · 硅序漫谈｜了解AI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.min.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/site.min.js" defer></script>
+</head>
+<body class="article-page-body" id="top" data-page="articles">
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden">
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M18 13l-6 6-6-6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16.5H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M8 7h8"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M8 7l-3 6h6L8 7Zm8 0-3 6h6l-3-6Z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/><rect x="10" y="10" width="4" height="4" rx="1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3ZM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15ZM5 3l.7 1.7L7.5 5.4 5.7 6.1 5 7.8l-.7-1.7L2.5 5.4l1.8-.7L5 3Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M19 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.1.4.3.7.6 1 .3.2.7.4 1.1.4h.1a2 2 0 1 1 0 4H21a1.7 1.7 0 0 0-1.6.6Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 11v5M14 11v5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16M7 12h10M10 19h4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 3 8.3 7 10 4-1.7 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.3c-1.1.7-1.7 1.2-1.7 2.7M12 17.5h.01"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M10 11H5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3M20 11h-5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5M12 17h.01"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z"/><path d="M9 21v-7h6v7"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.4-2L20 12M4 12l2.5 5a7 7 0 0 0 11.4-2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21 11.5-8.9 8.9a5 5 0 0 1-7.1-7.1l9.2-9.2a3.4 3.4 0 0 1 4.8 4.8l-9.2 9.2a1.8 1.8 0 0 1-2.5-2.5l8.5-8.5"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">硅序漫谈</span>
+        <span class="brand-sub">了解AI</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a class="nav-link" href="index.html" data-nav="home">首页</a>
+      <a class="nav-link" href="learn.html" data-nav="knowledge">知识体系</a>
+      <div class="nav-item nav-item--works">
+        <button class="nav-link nav-trigger" type="button" id="worksTrigger" aria-expanded="false" aria-controls="worksMega" data-nav="works">作品 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+      </div>
+      <a class="nav-link is-current" href="articles.html" data-nav="articles" aria-current="page">文章</a>
+      <a class="nav-link" href="about.html" data-nav="about">关于</a>
+      <a class="nav-link" href="contact.html" data-nav="contact">联系</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-search js-open-search" type="button" aria-label="搜索知识，快捷键 Command K">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span>搜索</span><span class="kbd">⌘K</span>
+      </button>
+      <a class="btn btn--primary header-cta" href="answers.html">学习自测</a>
+      <button class="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="works-mega" id="worksMega" aria-hidden="true" aria-label="作品导航">
+  <div class="mega-grid">
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>项目</div>
+      <div class="mega-links">
+        <a class="mega-link" href="project-justice.html">AI 与司法实践<span>人机协同与程序正义</span></a>
+        <a class="mega-link" href="project-ecology.html">生成式 AI 与信息生态<span>内容生产链的重写</span></a>
+        <a class="mega-link" href="project-learning.html">AI 通识学习路径<span>把教材变成行动</span></a>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>实验</div>
+      <div class="mega-links">
+        <a class="mega-link" href="experiment-verify.html">信息核查实验室<span>三道题练习证据意识</span></a>
+        <a class="mega-link" href="answers.html#quiz">通识自测 12 题<span>立即检验理解</span></a>
+        <a class="mega-link" href="works.html?filter=lab">全部实验<span>浏览互动练习</span></a>
+      </div>
+      <a class="mega-all" href="works.html">查看全部作品 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+    <div class="mega-col">
+      <div class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>资源</div>
+      <div class="mega-links">
+        <a class="mega-link" href="learn.html">系统课程<span>15 个知识点 · 即时练习</span></a>
+        <a class="mega-link" href="articles.html#papers">学术论文专栏<span>五篇值得进入的论文</span></a>
+        <a class="mega-link" href="about.html">教材与内容方法<span>我们的知识框架</span></a>
+        <a class="mega-link" href="answers.html#answer-key">答案速览<span>教师与自学者适用</span></a>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-featured">
+        <div class="mega-featured-media">
+          <span class="mega-featured-tag">精选项目</span>
+          <img src="assets/img/justice-700.webp" width="700" height="467" alt="正义女神手持天平的雕像" loading="lazy" decoding="async">
+        </div>
+        <div class="mega-featured-copy">
+          <p>PROJECT / 01</p>
+          <h3><a href="project-justice.html">AI 与司法实践</a></h3>
+          <a class="text-link" href="project-justice.html">进入项目 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="移动端导航">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-head">
+      <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+      </a>
+      <button class="menu-close" type="button" aria-label="关闭导航菜单"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <button class="mobile-search-btn js-open-search" type="button"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><span>搜索知识、文章与项目</span><span class="kbd">⌘K</span></button>
+    <nav class="mobile-nav" aria-label="移动端主导航">
+      <a href="index.html" data-nav="home">首页</a>
+<a href="learn.html" data-nav="knowledge">知识体系</a>
+<details>
+          <summary data-nav="works" class="">作品 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <div class="mobile-subnav">
+            <span class="mobile-subnav__label">项目</span>
+            <a href="project-justice.html">AI 与司法实践</a>
+            <a href="project-ecology.html">生成式 AI 与信息生态</a>
+            <a href="project-learning.html">AI 通识学习路径</a>
+            <span class="mobile-subnav__label">实验与资源</span>
+            <a href="experiment-verify.html">信息核查实验室</a>
+            <a href="answers.html">学习自测与答案</a>
+            <a href="learn.html">系统课程 · 15 讲</a>
+            <a href="works.html">全部作品</a>
+          </div>
+        </details>
+<a href="articles.html" data-nav="articles" class="is-current">文章</a>
+<a href="about.html" data-nav="about">关于</a>
+<a href="contact.html" data-nav="contact">联系</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a class="btn btn--primary" href="answers.html">开始学习自测</a>
+      <p class="mobile-menu-note">内容框架参考《人工智能通识及应用》<br>高等教育出版社 · 唐郑熠 / 林江宏 / 王金水 主编</p>
+    </div>
+  </div>
+</aside>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-shell" role="dialog" aria-modal="true" aria-labelledby="searchDialogTitle">
+    <h2 id="searchDialogTitle" class="sr-only">搜索硅序漫谈</h2>
+    <div class="search-bar">
+      <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+      <label class="sr-only" for="searchInput">搜索知识点、文章或项目</label>
+      <input class="search-input" id="searchInput" type="search" placeholder="搜索知识点、文章或项目…" autocomplete="off" spellcheck="false" aria-controls="searchResults">
+      <button class="menu-close" type="button" aria-label="关闭搜索" data-close-search><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="search-filters" id="searchFilters" role="tablist" aria-label="筛选内容类型"></div>
+    <div class="search-summary"><span id="searchSummary" aria-live="polite">推荐内容</span><span>↑↓ 选择 · Enter 打开 · ESC 关闭</span></div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-foot">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-compass"></use></svg>知识索引覆盖教材 10 章与扩展专题</span>
+      <span>硅序漫谈｜了解AI</span>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" type="button" aria-label="返回页面顶部">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+</button>
+
+<main id="main" class="page page--articles">
+<div class="reading-progress" aria-hidden="true"></div>
+
+<section class="article-hero" aria-labelledby="article-title">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="index.html">首页</a><span class="sep" aria-hidden="true">›</span>
+      <a href="articles.html">文章</a><span class="sep" aria-hidden="true">›</span>
+      <span aria-current="page">人工智能七十年</span>
+    </nav>
+    <div class="article-hero-inner">
+      <div class="article-category">历史 · 技术演进</div>
+      <h1 id="article-title">人工智能七十年：从符号到生成</h1>
+      <p class="article-dek">人工智能并非一条持续上升的直线。它由雄心、资源、方法与失望共同塑造。回望这段历史，能帮助我们理解今天的生成式 AI 为何出现，也看清它仍然脆弱的地方。</p>
+      <div class="article-byline">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg><strong>课程编辑组</strong></span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><time datetime="2026-10-28">2026 年 10 月 28 日</time></span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>约 14 分钟阅读</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>关联教材第 1 章</span>
+      </div>
+    </div>
+    <figure class="article-cover">
+      <div class="article-cover-media article-cover-media--natural">
+        <img src="assets/img/data-1400.webp" width="1400" height="934" alt="深蓝色电路板与芯片微距画面" fetchpriority="high" decoding="async">
+      </div>
+      <figcaption><span>图片来源：Unsplash</span><span>技术的历史，也是想象、资本与制度共同作用的历史。</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="article-body-wrap">
+  <div class="container">
+    <div class="article-layout">
+      <aside class="article-toc" aria-label="文章目录">
+        <div class="article-toc-title">On this page</div>
+        <nav>
+          <a href="#prehistory">01 / 思想前史</a>
+          <a href="#golden">02 / 符号主义的黄金</a>
+          <a href="#winters">03 / 寒冬与转向</a>
+          <a href="#deep-learning">04 / 深度学习的崛起</a>
+          <a href="#china">05 / 中国 AI 的路径</a>
+          <a href="#lessons">06 / 历史的三点提醒</a>
+        </nav>
+        <div class="article-toc-meta">本文基于教材第 1 章的历史分期，参考公开科学史资料整理。</div>
+      </aside>
+
+      <article class="article-content">
+        <details class="article-toc-mobile">
+          <summary>本文目录 <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <nav>
+            <a href="#prehistory">01 / 思想前史</a>
+            <a href="#golden">02 / 符号主义的黄金</a>
+            <a href="#winters">03 / 寒冬与转向</a>
+            <a href="#deep-learning">04 / 深度学习的崛起</a>
+            <a href="#china">05 / 中国 AI 的路径</a>
+            <a href="#lessons">06 / 历史的三点提醒</a>
+          </nav>
+        </details>
+
+        <p>1950 年，艾伦·图灵在论文《计算机器与智能》中提出了一个后来被广泛引用的问题：机器能思考吗？他没有试图定义“思考”，而是把它转化为一个可操作的思想实验——如果一台机器在对话中让人无法分辨其是否为机器，我们应当如何理解它的能力？</p>
+        <p>这个问题至今仍未过时。它把人工智能讨论中的两个核心张力摆在了桌面上：智能是否可以脱离身体与经验来定义？以及，表现得像会思考，是否等于真的理解？</p>
+
+        <div class="article-keypoints">
+          <div class="article-keypoints-head"><svg class="icon" aria-hidden="true"><use href="#i-target"></use></svg>阅读要点</div>
+          <ul>
+            <li>1956 年达特茅斯会议通常被视为人工智能学科的起点。</li>
+            <li>符号主义、连接主义与统计学习并非简单替代，而是在不同阶段相互竞争、彼此借鉴。</li>
+            <li>两次“AI 寒冬”提醒我们：算力、数据与可验证的应用，比宏大叙事更能支撑技术发展。</li>
+            <li>生成式 AI 不是历史的终点，当下仍存在能力、可靠性与治理上的显著不确定性。</li>
+          </ul>
+        </div>
+
+        <h2 id="prehistory">一、思想前史：从神经元到一门学科</h2>
+        <p>在“人工智能”这个名字出现之前，控制论、信息论与神经科学已经为它准备了概念土壤。1943 年，麦卡洛克与皮茨提出简化的人工神经元模型；1950 年，图灵提出机器智能的测试问题；1956 年夏天，约翰·麦卡锡、马文·明斯基、克劳德·香农等人在达特茅斯学院组织了一场研讨会，“人工智能”作为一个研究领域由此获得命名。</p>
+        <p>早期研究者普遍乐观。他们认为，智能的核心是符号操作：只要把知识表示为符号，并给出推理规则，机器就可能模拟人类思维。这一路径被称为符号主义，也叫“自上而下”的 AI。</p>
+
+        <h2 id="golden">二、符号主义的黄金与局限</h2>
+        <p>20 世纪 50 至 60 年代，研究者开发了跳棋程序、几何定理证明器与早期自然语言程序。ELIZA 通过模式匹配模拟心理治疗师对话，让人们第一次直观感受到“机器似乎能理解我”。与此同时，感知机等连接主义尝试也在发展，试图从数据中学习模式。</p>
+        <p>然而，符号系统擅长处理规则明确的问题，却难以应对真实世界的模糊性与常识。知识获取成为瓶颈：大量知识需要人工编码，系统一旦离开狭窄领域就容易失效。20 世纪 70 年代，第一轮乐观情绪遭遇现实，研究经费收缩，人工智能进入第一个寒冬。</p>
+
+        <h2 id="winters">三、寒冬与转向：专家系统的繁荣与退潮</h2>
+        <p>20 世纪 80 年代，专家系统带来新一轮商业化热潮。企业把领域专家的经验写成规则，用于医疗诊断、故障排查与配置管理。日本甚至启动了雄心勃勃的第五代计算机计划。但专家系统的维护成本高、知识更新困难，遇到规则冲突或边界情况时容易崩溃。</p>
+        <p>80 年代末，专用硬件市场萎缩、投资退潮，人工智能再次进入低谷。这两次寒冬留下了一个重要教训：技术的能力边界必须与真实任务匹配，不能仅靠演示与叙事推动大规模承诺。</p>
+
+        <h2 id="deep-learning">四、数据、算力与深度学习：范式再次转移</h2>
+        <p>90 年代以后，统计学习方法逐渐成为主流。机器翻译、语音识别与搜索开始更多依赖概率模型与大规模数据，而非人工编写规则。1997 年，深蓝战胜国际象棋世界冠军卡斯帕罗夫，展示了专用系统在封闭规则环境中的强大能力。</p>
+        <p>真正的转折发生在 2012 年。AlexNet 在 ImageNet 图像识别竞赛中大幅领先，证明了深度神经网络在充足数据与 GPU 算力下的表示学习能力。此后，卷积神经网络、循环神经网络与注意力机制快速发展。2017 年，Transformer 架构提出，为大规模语言模型奠定了基础。2022 年底，ChatGPT 让生成式 AI 进入公众视野。</p>
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <caption>一条简化的技术时间线</caption>
+            <thead><tr><th>时间</th><th>事件</th><th>意义</th></tr></thead>
+            <tbody>
+              <tr><td>1950</td><td>图灵提出“计算机器与智能”</td><td>确立机器智能的核心问题</td></tr>
+              <tr><td>1956</td><td>达特茅斯会议</td><td>人工智能作为一个学科获得命名</td></tr>
+              <tr><td>1980s</td><td>专家系统商业化</td><td>知识工程繁荣，也暴露可维护性问题</td></tr>
+              <tr><td>2012</td><td>AlexNet 获胜</td><td>深度学习进入主流视野</td></tr>
+              <tr><td>2017</td><td>Transformer 提出</td><td>为大规模预训练语言模型奠基</td></tr>
+              <tr><td>2022</td><td>ChatGPT 发布</td><td>生成式 AI 进入大众应用</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="china">五、中国 AI：从跟踪学习到场景驱动</h2>
+        <p>中国的人工智能研究起步于 20 世纪后半叶。早期以高校与科研院所跟踪国际前沿为主，在模式识别、机器翻译、专家系统等方向积累人才。改革开放后，国际交流与产业需求推动了研究体系的形成。1986 年启动的“863”计划将智能机器人等方向纳入高技术研究，成为重要的制度推动力。</p>
+        <p>进入 21 世纪，互联网产业提供了海量数据与丰富场景，语音识别、计算机视觉、推荐系统与移动支付风控等应用快速落地。2017 年，《新一代人工智能发展规划》发布，人工智能被提升到国家战略层面，基础研究、产业应用与治理体系建设同步推进。近年来，大模型、智能体与开源生态成为新的竞争焦点。</p>
+        <p>中国路径的特点是场景丰富、工程化能力强、政策与产业互动紧密；同时也面临基础理论原创、高端算力、数据治理与国际合作等结构性挑战。把“应用规模”直接等同于“技术领先”，会遮蔽这些需要长期投入的问题。</p>
+
+        <h2 id="lessons">六、历史的三点提醒</h2>
+        <h3>第一，能力不是单一维度。</h3>
+        <p>一个系统可以在特定任务上超过人类，却在常识、因果与跨情境迁移上表现有限。把“某 benchmark 的分数”当成“通用智能”的证据，是历史上反复出现的误判。</p>
+        <h3>第二，技术周期不等于线性进步。</h3>
+        <p>寒冬并不意味着技术无用，繁荣也不意味着问题已解决。资源、方法、场景与社会接受度共同决定一项技术能否持续发展。</p>
+        <h3>第三，治理与创新并非零和。</h3>
+        <p>透明、评估、责任与可救济，能够降低技术部署的社会风险，也能为长期创新提供稳定预期。对生成式 AI 而言，这一点尤其重要。</p>
+        <blockquote>
+          <p>历史不会告诉我们下一步一定发生什么，但会提醒我们：不要用今天的成功，证明明天没有边界。</p>
+          <cite>课程编辑组</cite>
+        </blockquote>
+
+        <div class="article-end">
+          <div class="article-tags">
+            <span class="tag">人工智能史</span>
+            <span class="tag">符号主义</span>
+            <span class="tag">深度学习</span>
+            <span class="tag">中国 AI</span>
+          </div>
+          <div class="article-actions">
+            <div class="share-buttons">
+              <button class="share-btn js-copy-link" type="button">
+                <svg class="icon" aria-hidden="true"><use href="#i-link"></use></svg>复制链接
+              </button>
+            </div>
+            <a class="text-link" href="articles.html">返回文章列表
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="article-references">
+          <h2>参考与延伸</h2>
+          <ol>
+            <li>唐郑熠、林江宏、王金水主编：《人工智能通识及应用》，高等教育出版社，2026 年。第 1 章。</li>
+            <li>Turing, A. M., “Computing Machinery and Intelligence,” <em>Mind</em>, 1950. <a href="https://doi.org/10.1093/mind/LIX.236.433" target="_blank" rel="noopener noreferrer">DOI</a></li>
+            <li>Vaswani, A. et al., “Attention Is All You Need,” NeurIPS 2017. <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">arXiv</a></li>
+            <li>国务院：《新一代人工智能发展规划》，2017 年。 <a href="https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm" target="_blank" rel="noopener noreferrer">gov.cn</a></li>
+          </ol>
+        </div>
+
+        <div class="article-next">
+          <a href="article-ai-society.html"><span>下一篇 · 社会</span><strong>效率红利之外，AI 的社会成本由谁承担？</strong></a>
+          <a href="project-justice.html"><span>关联项目</span><strong>AI 与司法实践</strong></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="硅序漫谈｜了解AI 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+        </a>
+        <p>面向大学生的 AI 通识伴学空间。以《人工智能通识及应用》教材为骨架，用问题、案例与练习建立可迁移的判断力。</p>
+        <p class="footer-note">内容框架参考《人工智能通识及应用》<br>唐郑熠、林江宏、王金水 主编 · 高等教育出版社<br>课程编辑组独立维护</p>
+      </div>
+      <div class="footer-col">
+        <h3>学习</h3>
+        <div class="footer-links">
+          <a href="learn.html">知识体系</a>
+          <a href="works.html">作品与实践</a>
+          <a href="answers.html">学习自测</a>
+          <a href="answers.html#answer-key">答案速览</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <div class="footer-links">
+          <a href="articles.html">全部文章</a>
+          <a href="articles.html#papers">学术论文专栏</a>
+          <a href="about.html">关于本课</a>
+          <a href="about.html#framework">教材框架</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>联系</h3>
+        <div class="footer-links">
+          <a href="contact.html">交流与共建</a>
+          <a href="mailto:hello@ai-literacy.cn">hello@ai-literacy.cn</a>
+          <a href="contact.html#faq">常见问题</a>
+          <a href="dashboard.html">内容后台（演示）</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 硅序漫谈｜了解AI · 大学生 AI 伴学作品。本站为独立学习与教学设计项目，非出版机构官方网站；教材封面与出版信息版权归原作者及出版社所有。部分摄影素材来自 Unsplash。内容仅用于学习交流，具体政策与法律请以官方最新文件为准。</p>
+      <div class="footer-bottom-meta">
+        <a href="https://mall.hep.com.cn/goods-48620.html" target="_blank" rel="noopener noreferrer">教材信息 <svg class="icon icon--12" aria-hidden="true"><use href="#i-external"></use></svg></a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

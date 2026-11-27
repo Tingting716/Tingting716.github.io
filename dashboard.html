@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="硅序漫谈｜了解AI 内容管理后台演示：概览、项目、文章、素材与设置。">
+  <title>内容后台 · 硅序漫谈｜了解AI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.min.css">
+  <link rel="stylesheet" href="assets/css/admin.min.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/admin.min.js" defer></script>
+</head>
+<body class="admin-body" data-page="dashboard">
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden">
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M18 13l-6 6-6-6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16.5H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M8 7h8"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M8 7l-3 6h6L8 7Zm8 0-3 6h6l-3-6Z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/><rect x="10" y="10" width="4" height="4" rx="1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3ZM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15ZM5 3l.7 1.7L7.5 5.4 5.7 6.1 5 7.8l-.7-1.7L2.5 5.4l1.8-.7L5 3Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M19 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.1.4.3.7.6 1 .3.2.7.4 1.1.4h.1a2 2 0 1 1 0 4H21a1.7 1.7 0 0 0-1.6.6Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 11v5M14 11v5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16M7 12h10M10 19h4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 3 8.3 7 10 4-1.7 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.3c-1.1.7-1.7 1.2-1.7 2.7M12 17.5h.01"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M10 11H5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3M20 11h-5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5M12 17h.01"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z"/><path d="M9 21v-7h6v7"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.4-2L20 12M4 12l2.5 5a7 7 0 0 0 11.4-2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21 11.5-8.9 8.9a5 5 0 0 1-7.1-7.1l9.2-9.2a3.4 3.4 0 0 1 4.8 4.8l-9.2 9.2a1.8 1.8 0 0 1-2.5-2.5l8.5-8.5"/></symbol>
+</svg>
+  <a class="skip-link" href="#adminMain">跳到主要内容</a>
+
+  <div class="admin-backdrop" data-admin-backdrop aria-hidden="true"></div>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="后台主导航">
+      <div class="admin-sidebar-head">
+        <a class="brand" href="dashboard.html" aria-label="硅序漫谈｜了解AI 内容后台首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 10.2c-2.7-1.8-5.3-1.8-7 0v12c1.7-1.8 4.3-1.8 7 0 2.7-1.8 5.3-1.8 7 0v-12c-1.7-1.8-4.3-1.8-7 0Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 10.2v12" stroke="#b7ccff" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <span><span class="brand-name">硅序漫谈</span><span class="brand-sub">了解AI</span></span>
+        </a>
+        <button class="admin-close" type="button" data-admin-menu-close aria-label="关闭后台导航">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+
+      <div class="admin-workspace">
+        <span class="admin-workspace-avatar" aria-hidden="true">硅</span>
+        <div class="admin-workspace-copy">
+          <strong>硅序漫谈｜了解AI</strong>
+          <span>内容管理 · 演示空间</span>
+        </div>
+        <svg class="icon" style="width: 12px; height: 12px; margin-left: auto; color: var(--faint);" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+      </div>
+
+      <nav class="admin-nav" aria-label="内容管理导航">
+        <span class="admin-nav-label">Workspace</span>
+        <a class="admin-nav-item is-active" href="#overview" data-admin-link data-view="overview" aria-current="page">
+          <svg class="icon" aria-hidden="true"><use href="#i-grid"></use></svg>概览
+        </a>
+        <a class="admin-nav-item" href="#projects" data-admin-link data-view="projects">
+          <svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>项目
+        </a>
+        <button class="admin-nav-toggle" type="button" aria-expanded="false" aria-controls="adminArticlesSubnav" data-admin-submenu>
+          <svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg>文章
+          <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+        </button>
+        <div class="admin-subnav" id="adminArticlesSubnav" hidden>
+          <a href="#articles" data-admin-link data-view="articles" data-parent="articles">文章列表</a>
+          <a href="#series" data-admin-link data-view="series" data-parent="articles">专栏管理</a>
+        </div>
+        <a class="admin-nav-item" href="#assets" data-admin-link data-view="assets">
+          <svg class="icon" aria-hidden="true"><use href="#i-image"></use></svg>素材
+        </a>
+        <a class="admin-nav-item" href="#settings" data-admin-link data-view="settings">
+          <svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg>设置
+        </a>
+
+        <span class="admin-nav-label" style="margin-top: 18px;">Quick links</span>
+        <a class="admin-nav-item" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>查看前台
+        </a>
+        <a class="admin-nav-item" href="answers.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg>自测与答案
+        </a>
+      </nav>
+
+      <div class="admin-sidebar-foot">
+        <a href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>返回公开站点
+        </a>
+        <a href="mailto:hello@ai-literacy.cn">
+          <svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg>帮助与反馈
+        </a>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-menu-toggle" type="button" aria-label="打开后台导航" aria-expanded="false" aria-controls="adminSidebar" data-admin-menu-open>
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+        <div class="admin-breadcrumb" aria-label="当前位置">
+          <span>后台</span><span aria-hidden="true">/</span><strong data-admin-breadcrumb>概览</strong>
+        </div>
+        <div class="admin-topbar-actions">
+          <label class="admin-search" for="adminSearch">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+            <input id="adminSearch" type="search" placeholder="搜索内容、项目或素材" autocomplete="off">
+            <kbd>⌘K</kbd>
+          </label>
+          <button class="admin-icon-btn" type="button" aria-label="通知" data-admin-toast="目前没有新的系统通知">
+            <svg class="icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="notice-dot" aria-hidden="true"></span>
+          </button>
+          <div class="admin-user">
+            <span class="admin-user-avatar" aria-hidden="true">林</span>
+            <div class="admin-user-copy"><strong>林老师</strong><span>内容管理员</span></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="admin-content" id="adminMain">
+        <!-- Overview -->
+        <section class="admin-view" id="overview" data-admin-view="overview" aria-labelledby="adminOverviewTitle">
+          <div class="admin-view-head">
+            <div>
+              <div class="admin-view-eyebrow">Thursday · 26 Nov 2026</div>
+              <h1 id="adminOverviewTitle">内容概览</h1>
+              <p>欢迎回来。以下是硅序漫谈内容站的近期状态与待处理事项。</p>
+            </div>
+            <div class="admin-view-actions">
+              <a class="btn btn--secondary" href="index.html">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg>预览前台
+              </a>
+              <button class="btn btn--primary" type="button" data-admin-toast="演示环境：新建内容面板尚未接入后端">
+                <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>新建内容
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-stats">
+            <div class="admin-stat">
+              <div class="admin-stat-top">
+                <span class="admin-stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg></span>
+                <span class="admin-stat-trend"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>3 本月</span>
+              </div>
+              <div class="admin-stat-label">已发布文章</div>
+              <div class="admin-stat-value">12</div>
+              <div class="admin-stat-note">4 篇为深度研究，8 篇为学习笔记</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-top">
+                <span class="admin-stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg></span>
+                <span class="admin-stat-trend" style="color: var(--muted);">2 进行中</span>
+              </div>
+              <div class="admin-stat-label">项目与实验</div>
+              <div class="admin-stat-value">04</div>
+              <div class="admin-stat-note">研究项目 3 · 互动实验 1</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-top">
+                <span class="admin-stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-image"></use></svg></span>
+                <span class="admin-stat-trend"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>8 本月</span>
+              </div>
+              <div class="admin-stat-label">素材文件</div>
+              <div class="admin-stat-value">28</div>
+              <div class="admin-stat-note">图片 22 · 图表 4 · 文档 2</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-top">
+                <span class="admin-stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"></use></svg></span>
+                <span class="admin-stat-trend"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>12.4%</span>
+              </div>
+              <div class="admin-stat-label">本月访问</div>
+              <div class="admin-stat-value">6,420</div>
+              <div class="admin-stat-note">较上月增长 · 独立访客 4,187</div>
+            </div>
+          </div>
+
+          <div class="admin-grid admin-grid--overview">
+            <article class="admin-panel">
+              <div class="admin-panel-head">
+                <div>
+                  <h2>内容访问趋势</h2>
+                  <p>最近 7 天 · 每日汇总</p>
+                </div>
+                <span class="admin-panel-link">近 7 天
+                  <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+                </span>
+              </div>
+              <figure class="admin-chart" style="margin: 0;">
+                <svg viewBox="0 0 660 224" role="img" aria-labelledby="trafficChartTitle trafficChartDesc">
+                  <title id="trafficChartTitle">最近 7 天内容访问趋势折线图</title>
+                  <desc id="trafficChartDesc">页面访问量整体上升，内容阅读量在周四达到高点。</desc>
+                  <g stroke="#eef1f6" stroke-width="1">
+                    <line x1="36" y1="28" x2="640" y2="28"/>
+                    <line x1="36" y1="70" x2="640" y2="70"/>
+                    <line x1="36" y1="112" x2="640" y2="112"/>
+                    <line x1="36" y1="154" x2="640" y2="154"/>
+                    <line x1="36" y1="196" x2="640" y2="196"/>
+                  </g>
+                  <g fill="#627188" font-size="8" font-family="Inter, PingFang SC, sans-serif">
+                    <text x="4" y="31">2.4k</text>
+                    <text x="4" y="73">1.8k</text>
+                    <text x="4" y="115">1.2k</text>
+                    <text x="4" y="157">600</text>
+                    <text x="4" y="199">0</text>
+                    <text x="59" y="220">11/20</text>
+                    <text x="151" y="220">11/21</text>
+                    <text x="243" y="220">11/22</text>
+                    <text x="335" y="220">11/23</text>
+                    <text x="427" y="220">11/24</text>
+                    <text x="519" y="220">11/25</text>
+                    <text x="611" y="220">11/26</text>
+                  </g>
+                  <path d="M70 158 L162 116 L254 134 L346 95 L438 62 L530 83 L622 46 L622 196 L70 196 Z" fill="#eef3ff"/>
+                  <polyline points="70,158 162,116 254,134 346,95 438,62 530,83 622,46" fill="none" stroke="#1e4fd7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="70,178 162,166 254,171 346,149 438,139 530,152 622,128" fill="none" stroke="#cbd6e5" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+                  <g fill="#fff" stroke="#1e4fd7" stroke-width="2">
+                    <circle cx="70" cy="158" r="3.1"/>
+                    <circle cx="162" cy="116" r="3.1"/>
+                    <circle cx="254" cy="134" r="3.1"/>
+                    <circle cx="346" cy="95" r="3.1"/>
+                    <circle cx="438" cy="62" r="3.1"/>
+                    <circle cx="530" cy="83" r="3.1"/>
+                    <circle cx="622" cy="46" r="3.1"/>
+                  </g>
+                  <g fill="#fff" stroke="#cbd6e5" stroke-width="1.5">
+                    <circle cx="70" cy="178" r="2.4"/>
+                    <circle cx="162" cy="166" r="2.4"/>
+                    <circle cx="254" cy="171" r="2.4"/>
+                    <circle cx="346" cy="149" r="2.4"/>
+                    <circle cx="438" cy="139" r="2.4"/>
+                    <circle cx="530" cy="152" r="2.4"/>
+                    <circle cx="622" cy="128" r="2.4"/>
+                  </g>
+                </svg>
+              </figure>
+              <div class="admin-chart-legend">
+                <span><i></i>页面访问量</span>
+                <span><i></i>内容阅读量</span>
+                <span style="margin-left: auto;">峰值日 11/26 · 2,130</span>
+              </div>
+            </article>
+
+            <article class="admin-panel">
+              <div class="admin-panel-head">
+                <div><h2>内容构成</h2><p>按内容类型统计</p></div>
+                <span class="admin-panel-link">全部内容</span>
+              </div>
+              <div class="admin-bars">
+                <div class="admin-bar-row"><span>文章</span><strong>12</strong><div class="admin-bar-track"><span class="admin-bar-fill" style="width: 88%;"></span></div></div>
+                <div class="admin-bar-row"><span>项目</span><strong>04</strong><div class="admin-bar-track"><span class="admin-bar-fill" style="width: 31%;"></span></div></div>
+                <div class="admin-bar-row"><span>素材</span><strong>28</strong><div class="admin-bar-track"><span class="admin-bar-fill" style="width: 100%;"></span></div></div>
+                <div class="admin-bar-row"><span>论文</span><strong>05</strong><div class="admin-bar-track"><span class="admin-bar-fill admin-bar-fill--muted" style="width: 39%;"></span></div></div>
+              </div>
+              <div class="admin-panel-head" style="border-top: 1px solid var(--line); border-bottom: 0; padding-top: 14px; padding-bottom: 14px;">
+                <div><h2 style="font-size: 10px; color: var(--faint);">内容健康度</h2></div>
+                <span style="color: var(--green); font-size: 12px; font-weight: 650;">良好 · 92%</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="admin-grid admin-grid--bottom">
+            <article class="admin-panel">
+              <div class="admin-panel-head">
+                <div><h2>最近更新</h2><p>内容团队的最新编辑记录</p></div>
+                <a class="admin-panel-link" href="#articles" data-admin-link data-view="articles">查看全部
+                  <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                </a>
+              </div>
+              <div class="admin-table-wrap">
+                <table class="admin-table">
+                  <thead><tr><th>内容</th><th>类型</th><th>状态</th><th>更新时间</th><th style="text-align:right;">操作</th></tr></thead>
+                  <tbody>
+                    <tr data-search-row data-search-text="生成式 AI 与信息生态 文章 已发布">
+                      <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/newspaper-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>生成式 AI 与信息生态</strong><span>课程编辑组 · 深度文章</span></span></div></td>
+                      <td>文章</td><td><span class="status status--published">已发布</span></td><td>11-12 16:40</td>
+                      <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑生成式 AI 与信息生态" data-admin-toast="编辑面板演示：该操作未接入后端"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="更多操作" data-admin-toast="更多操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div></td>
+                    </tr>
+                    <tr data-search-row data-search-text="AI 与司法实践 项目 已发布">
+                      <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/justice-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>AI 与司法实践</strong><span>研究项目 · 人机协同</span></span></div></td>
+                      <td>项目</td><td><span class="status status--published">已发布</span></td><td>11-08 10:12</td>
+                      <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑 AI 与司法实践" data-admin-toast="编辑面板演示：该操作未接入后端"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="更多操作" data-admin-toast="更多操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div></td>
+                    </tr>
+                    <tr data-search-row data-search-text="人工智能七十年 文章 已发布">
+                      <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/data-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>人工智能七十年：从符号到生成</strong><span>课程编辑组 · 历史</span></span></div></td>
+                      <td>文章</td><td><span class="status status--published">已发布</span></td><td>10-28 14:26</td>
+                      <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑人工智能七十年" data-admin-toast="编辑面板演示：该操作未接入后端"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="更多操作" data-admin-toast="更多操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div></td>
+                    </tr>
+                    <tr data-search-row data-search-text="信息核查实验室 实验 审核中">
+                      <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/library-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>信息核查实验室</strong><span>互动实验 · 草稿</span></span></div></td>
+                      <td>实验</td><td><span class="status status--review">审核中</span></td><td>10-21 09:54</td>
+                      <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑信息核查实验室" data-admin-toast="编辑面板演示：该操作未接入后端"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="更多操作" data-admin-toast="更多操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="admin-panel">
+              <div class="admin-panel-head">
+                <div><h2>待办事项</h2><p>3 项需要关注</p></div>
+                <span class="admin-panel-link">本周</span>
+              </div>
+              <div class="admin-tasks">
+                <div class="admin-task"><input id="task1" type="checkbox"><label for="task1"><strong>核对《标识办法》引用日期</strong><span>文章 · 信息生态 · 今天</span></label></div>
+                <div class="admin-task"><input id="task2" type="checkbox"><label for="task2"><strong>为司法项目补充来源链接</strong><span>项目 · 司法实践 · 明天</span></label></div>
+                <div class="admin-task"><input id="task3" type="checkbox"><label for="task3"><strong>更新学习路径的章节映射</strong><span>页面 · 关于本课 · 本周</span></label></div>
+              </div>
+              <div class="admin-panel-head" style="border-top: 1px solid var(--line); border-bottom: 0; padding-top: 13px; padding-bottom: 13px;">
+                <span style="color: var(--faint); font-size: 9px; line-height: 1.6;">提示：演示环境中的操作不会持久化。</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="admin-view" id="projects" data-admin-view="projects" aria-labelledby="adminProjectsTitle" hidden>
+          <div class="admin-view-head">
+            <div>
+              <div class="admin-view-eyebrow">Manage / Works</div>
+              <h1 id="adminProjectsTitle">项目管理</h1>
+              <p>研究项目与互动实验的内容状态、更新记录与公开入口。</p>
+            </div>
+            <div class="admin-view-actions">
+              <button class="btn btn--secondary" type="button" data-admin-toast="演示环境：筛选器未接入">筛选</button>
+              <button class="btn btn--primary" type="button" data-admin-toast="演示环境：新建项目面板尚未接入"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>新建项目</button>
+            </div>
+          </div>
+          <div class="admin-projects-grid">
+            <article class="admin-project-card" data-search-card data-search-text="AI 与司法实践 项目 已发布">
+              <div class="admin-project-media"><img src="assets/img/justice-700.webp" width="700" height="467" alt="" loading="lazy"></div>
+              <div class="admin-project-copy">
+                <span class="admin-project-meta">Project 01 / AI</span>
+                <h3>AI 与司法实践</h3>
+                <p>人机协同、可解释性与程序正义。</p>
+                <div class="admin-project-foot"><span class="status status--published">已发布</span><a class="admin-panel-link" href="project-justice.html">打开页面 <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="admin-project-card" data-search-card data-search-text="生成式 AI 与信息生态 项目 已发布">
+              <div class="admin-project-media"><img src="assets/img/newspaper-700.webp" width="700" height="467" alt="" loading="lazy"></div>
+              <div class="admin-project-copy">
+                <span class="admin-project-meta">Project 02 / Web</span>
+                <h3>生成式 AI 与信息生态</h3>
+                <p>内容生产链、风险图谱与核查路径。</p>
+                <div class="admin-project-foot"><span class="status status--published">已发布</span><a class="admin-panel-link" href="project-ecology.html">打开页面 <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="admin-project-card" data-search-card data-search-text="AI 通识学习路径 项目 已发布">
+              <div class="admin-project-media"><img src="assets/img/classroom-700.webp" width="700" height="467" alt="" loading="lazy"></div>
+              <div class="admin-project-copy">
+                <span class="admin-project-meta">Project 03 / Web</span>
+                <h3>AI 通识学习路径</h3>
+                <p>三阶段、十章节与可交付成果。</p>
+                <div class="admin-project-foot"><span class="status status--published">已发布</span><a class="admin-panel-link" href="project-learning.html">打开页面 <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="admin-project-card" data-search-card data-search-text="信息核查实验室 实验 审核中">
+              <div class="admin-project-media"><img src="assets/img/data-700.webp" width="700" height="467" alt="" loading="lazy"></div>
+              <div class="admin-project-copy">
+                <span class="admin-project-meta">Lab 01 / Interactive</span>
+                <h3>信息核查实验室</h3>
+                <p>三道情境题与核查四步法。</p>
+                <div class="admin-project-foot"><span class="status status--review">审核中</span><a class="admin-panel-link" href="experiment-verify.html">打开页面 <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a></div>
+              </div>
+            </article>
+          </div>
+          <div class="admin-panel" style="margin-top: 16px; padding: 16px 18px;">
+            <p style="color: var(--faint); font-size: 10px; line-height: 1.7;">项目页面采用静态内容与互动模块混合呈现。新增项目时需同步配置：公开地址、封面素材、内容类型与关联教材章节。</p>
+          </div>
+        </section>
+
+        <!-- Articles -->
+        <section class="admin-view" id="articles" data-admin-view="articles" aria-labelledby="adminArticlesTitle" hidden>
+          <div class="admin-view-head">
+            <div>
+              <div class="admin-view-eyebrow">Manage / Articles</div>
+              <h1 id="adminArticlesTitle">文章管理</h1>
+              <p>深度文章、研究笔记与论文专栏的统一入口。</p>
+            </div>
+            <div class="admin-view-actions">
+              <button class="btn btn--secondary" type="button" data-admin-toast="演示环境：导出功能未接入">导出目录</button>
+              <button class="btn btn--primary" type="button" data-admin-toast="演示环境：新建文章面板尚未接入"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>新建文章</button>
+            </div>
+          </div>
+          <article class="admin-panel">
+            <div class="admin-panel-head">
+              <div><h2>全部文章</h2><p>按最近更新时间排序</p></div>
+              <span class="admin-panel-link">共 12 篇</span>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr><th>标题</th><th>分类</th><th>状态</th><th>更新时间</th><th>阅读</th><th style="text-align:right;">操作</th></tr></thead>
+                <tbody>
+                  <tr data-search-row data-search-text="生成式 AI 与信息生态 信息生态 已发布">
+                    <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/newspaper-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>生成式 AI 与信息生态</strong><span>课程编辑组</span></span></div></td>
+                    <td>信息生态</td><td><span class="status status--published">已发布</span></td><td>2026-11-12</td><td>2,184</td>
+                    <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑" data-admin-toast="编辑面板演示"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="删除" data-admin-toast="演示环境：删除操作已禁用"><svg class="icon"><use href="#i-trash"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-search-row data-search-text="人工智能七十年 历史 已发布">
+                    <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/data-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>人工智能七十年：从符号到生成</strong><span>课程编辑组</span></span></div></td>
+                    <td>历史</td><td><span class="status status--published">已发布</span></td><td>2026-10-28</td><td>1,726</td>
+                    <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑" data-admin-toast="编辑面板演示"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="删除" data-admin-toast="演示环境：删除操作已禁用"><svg class="icon"><use href="#i-trash"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-search-row data-search-text="效率红利之外 社会 已发布">
+                    <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/classroom-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>效率红利之外，AI 的社会成本由谁承担？</strong><span>课程编辑组</span></span></div></td>
+                    <td>社会</td><td><span class="status status--published">已发布</span></td><td>2026-10-16</td><td>1,408</td>
+                    <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑" data-admin-toast="编辑面板演示"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="删除" data-admin-toast="演示环境：删除操作已禁用"><svg class="icon"><use href="#i-trash"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-search-row data-search-text="全球 AI 治理 治理 已发布">
+                    <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/network-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>全球 AI 治理：从原则到规则</strong><span>课程编辑组</span></span></div></td>
+                    <td>治理</td><td><span class="status status--published">已发布</span></td><td>2026-09-30</td><td>1,892</td>
+                    <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑" data-admin-toast="编辑面板演示"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="删除" data-admin-toast="演示环境：删除操作已禁用"><svg class="icon"><use href="#i-trash"></use></svg></button></div></td>
+                  </tr>
+                  <tr data-search-row data-search-text="论文导读 专栏 草稿">
+                    <td><div class="admin-table-title"><span class="admin-table-thumb"><img src="assets/img/library-700.webp" width="700" height="467" alt="" loading="lazy"></span><span><strong>如何读一篇 AI 论文</strong><span>课程编辑组 · 草稿</span></span></div></td>
+                    <td>专栏</td><td><span class="status status--draft">草稿</span></td><td>2026-09-22</td><td>—</td>
+                    <td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑" data-admin-toast="编辑面板演示"><svg class="icon"><use href="#i-edit"></use></svg></button><button class="admin-row-btn" type="button" aria-label="删除" data-admin-toast="演示环境：删除操作已禁用"><svg class="icon"><use href="#i-trash"></use></svg></button></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <!-- Series -->
+        <section class="admin-view" id="series" data-admin-view="series" aria-labelledby="adminSeriesTitle" hidden>
+          <div class="admin-view-head">
+            <div>
+              <div class="admin-view-eyebrow">Manage / Series</div>
+              <h1 id="adminSeriesTitle">专栏管理</h1>
+              <p>将分散的文章组织成有学习顺序的系列专题。</p>
+            </div>
+            <div class="admin-view-actions">
+              <button class="btn btn--primary" type="button" data-admin-toast="演示环境：新建专栏面板尚未接入"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>新建专栏</button>
+            </div>
+          </div>
+          <article class="admin-panel">
+            <div class="admin-panel-head"><div><h2>全部专栏</h2><p>3 个专栏 · 共 9 篇文章</p></div><span class="admin-panel-link">已同步前台</span></div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr><th>专栏</th><th>文章数</th><th>更新</th><th>状态</th><th style="text-align:right;">操作</th></tr></thead>
+                <tbody>
+                  <tr><td><div class="admin-table-title"><span><strong>信息生态阅读</strong><span>生成式 AI、内容与判断力</span></span></div></td><td>3</td><td>2026-11-12</td><td><span class="status status--published">已发布</span></td><td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑专栏" data-admin-toast="专栏编辑演示"><svg class="icon"><use href="#i-edit"></use></svg></button></div></td></tr>
+                  <tr><td><div class="admin-table-title"><span><strong>AI 的历史与制度</strong><span>技术周期、社会影响与治理</span></span></div></td><td>4</td><td>2026-10-28</td><td><span class="status status--published">已发布</span></td><td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑专栏" data-admin-toast="专栏编辑演示"><svg class="icon"><use href="#i-edit"></use></svg></button></div></td></tr>
+                  <tr><td><div class="admin-table-title"><span><strong>论文研读方法</strong><span>从摘要、方法到局限</span></span></div></td><td>2</td><td>2026-09-22</td><td><span class="status status--draft">草稿</span></td><td><div class="admin-row-actions"><button class="admin-row-btn" type="button" aria-label="编辑专栏" data-admin-toast="专栏编辑演示"><svg class="icon"><use href="#i-edit"></use></svg></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <!-- Assets -->
+        <section class="admin-view" id="assets" data-admin-view="assets" aria-labelledby="adminAssetsTitle" hidden>
+          <div class="admin-view-head">
+            <div>
+              <div class="admin-view-eyebrow">Manage / Assets</div>
+              <h1 id="adminAssetsTitle">素材库</h1>
+              <p>统一管理文章封面、项目图片、图表与文档资产。</p>
+            </div>
+            <div class="admin-view-actions">
+              <button class="btn btn--secondary" type="button" data-admin-toast="演示环境：素材筛选未接入">筛选</button>
+              <button class="btn btn--primary" type="button" data-admin-toast="演示环境：上传功能未接入"><svg class="icon" aria-hidden="true"><use href="#i-upload"></use></svg>上传素材</button>
+            </div>
+          </div>
+          <div class="admin-assets">
+            <article class="admin-asset" data-search-card data-search-text="报纸 信息生态 图片">
+              <div class="admin-asset-media"><img src="assets/img/newspaper-700.webp" width="700" height="467" alt="报纸素材" loading="lazy"></div>
+              <div class="admin-asset-body"><div><strong>newspaper-1400.webp</strong><span>1400 × 934 · 49 KB</span></div><button class="admin-row-btn" type="button" aria-label="报纸素材操作" data-admin-toast="素材操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div>
+            </article>
+            <article class="admin-asset" data-search-card data-search-text="正义女神 司法 图片">
+              <div class="admin-asset-media"><img src="assets/img/justice-700.webp" width="700" height="467" alt="正义女神素材" loading="lazy"></div>
+              <div class="admin-asset-body"><div><strong>justice-1400.webp</strong><span>1400 × 934 · 64 KB</span></div><button class="admin-row-btn" type="button" aria-label="司法素材操作" data-admin-toast="素材操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div>
+            </article>
+            <article class="admin-asset" data-search-card data-search-text="课堂 学习 图片">
+              <div class="admin-asset-media"><img src="assets/img/classroom-700.webp" width="700" height="467" alt="课堂素材" loading="lazy"></div>
+              <div class="admin-asset-body"><div><strong>classroom-1400.webp</strong><span>1400 × 934 · 94 KB</span></div><button class="admin-row-btn" type="button" aria-label="课堂素材操作" data-admin-toast="素材操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div>
+            </article>
+            <article class="admin-asset" data-search-card data-search-text="地球 网络 治理 图片">
+              <div class="admin-asset-media"><img src="assets/img/network-700.webp" width="700" height="467" alt="全球网络素材" loading="lazy"></div>
+              <div class="admin-asset-body"><div><strong>network-1400.webp</strong><span>1400 × 934 · 70 KB</span></div><button class="admin-row-btn" type="button" aria-label="网络素材操作" data-admin-toast="素材操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div>
+            </article>
+            <article class="admin-asset" data-search-card data-search-text="芯片 技术 图片">
+              <div class="admin-asset-media"><img src="assets/img/data-700.webp" width="700" height="467" alt="芯片素材" loading="lazy"></div>
+              <div class="admin-asset-body"><div><strong>data-1400.webp</strong><span>1400 × 934 · 164 KB</span></div><button class="admin-row-btn" type="button" aria-label="芯片素材操作" data-admin-toast="素材操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div>
+            </article>
+            <article class="admin-asset" data-search-card data-search-text="图书馆 学习 图片">
+              <div class="admin-asset-media"><img src="assets/img/library-700.webp" width="700" height="467" alt="图书馆素材" loading="lazy"></div>
+              <div class="admin-asset-body"><div><strong>library-1400.webp</strong><span>1400 × 934 · 102 KB</span></div><button class="admin-row-btn" type="button" aria-label="图书馆素材操作" data-admin-toast="素材操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div>
+            </article>
+            <article class="admin-asset" data-search-card data-search-text="教材 封面 图片">
+              <div class="admin-asset-media"><img src="assets/img/textbook-cover.webp" width="590" height="745" alt="教材封面素材" loading="lazy"></div>
+              <div class="admin-asset-body"><div><strong>textbook-cover.webp</strong><span>590 × 745 · 35 KB</span></div><button class="admin-row-btn" type="button" aria-label="教材封面操作" data-admin-toast="素材操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div>
+            </article>
+            <article class="admin-asset" data-search-card data-search-text="图表 数据 图片">
+              <div class="admin-asset-media"><img src="assets/img/network-700.webp" width="700" height="467" alt="图表占位素材" loading="lazy" style="filter: grayscale(1); opacity: .55;"></div>
+              <div class="admin-asset-body"><div><strong>governance-chart.svg</strong><span>SVG · 8 KB</span></div><button class="admin-row-btn" type="button" aria-label="图表素材操作" data-admin-toast="素材操作演示"><svg class="icon"><use href="#i-more"></use></svg></button></div>
+            </article>
+            <div class="admin-upload" role="button" tabindex="0" data-admin-toast="演示环境：上传功能未接入">
+              <div><svg class="icon" aria-hidden="true"><use href="#i-upload"></use></svg>拖入文件或点击上传<br><span style="font-size:8.5px;color:#9aa5b5;">支持 WebP / PNG / SVG，单个不超过 5 MB</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Settings -->
+        <section class="admin-view" id="settings" data-admin-view="settings" aria-labelledby="adminSettingsTitle" hidden>
+          <div class="admin-view-head">
+            <div>
+              <div class="admin-view-eyebrow">Configure / Site</div>
+              <h1 id="adminSettingsTitle">站点设置</h1>
+              <p>站点名称、联系信息与发布行为的演示配置。</p>
+            </div>
+            <div class="admin-view-actions">
+              <button class="btn btn--secondary" type="button" data-admin-toast="演示环境：变更未持久化">恢复默认</button>
+              <button class="btn btn--primary" type="submit" form="adminSettingsForm">
+                <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>保存设置
+              </button>
+            </div>
+          </div>
+          <form class="admin-form" id="adminSettingsForm" data-admin-settings-form>
+            <div class="admin-panel admin-form-panel">
+              <h2>基本信息</h2>
+              <p>这些信息会出现在前台站点与页脚中。</p>
+              <div class="admin-form-grid">
+                <div class="admin-field">
+                  <label for="siteName">站点名称</label>
+                  <input id="siteName" name="siteName" type="text" value="硅序漫谈｜了解AI">
+                </div>
+                <div class="admin-field">
+                  <label for="siteSubtitle">站点副标题</label>
+                  <input id="siteSubtitle" name="siteSubtitle" type="text" value="AI Literacy">
+                </div>
+                <div class="admin-field admin-field--full">
+                  <label for="siteDescription">站点简介</label>
+                  <textarea id="siteDescription" name="siteDescription" rows="3">面向学生与教师的 AI 通识学习空间。从教材出发，用问题、案例与练习建立可迁移的判断力。</textarea>
+                </div>
+                <div class="admin-field">
+                  <label for="siteEmail">联系邮箱</label>
+                  <input id="siteEmail" name="siteEmail" type="email" value="hello@ai-literacy.cn">
+                </div>
+                <div class="admin-field">
+                  <label for="siteLanguage">默认语言</label>
+                  <select id="siteLanguage" name="siteLanguage">
+                    <option selected>简体中文</option>
+                    <option>English</option>
+                  </select>
+                </div>
+              </div>
+              <div class="admin-form-actions">
+                <button class="btn btn--primary" type="submit">保存基本信息</button>
+                <button class="btn btn--secondary" type="button" data-admin-toast="预览功能演示">预览前台</button>
+              </div>
+              <p class="admin-form-meta">最后修改：2026-11-26 18:20 · 林老师<br>演示环境不会存储设置；刷新页面后恢复默认值。</p>
+            </div>
+
+            <div>
+              <div class="admin-panel admin-form-panel">
+                <h2>发布与可见性</h2>
+                <p>控制公开站点的基础行为。</p>
+                <div class="admin-toggles">
+                  <div class="admin-toggle-row">
+                    <div><strong>公开显示文章阅读量</strong><p>在文章底部显示阅读次数。</p></div>
+                    <label class="switch"><input type="checkbox" checked aria-label="公开显示文章阅读量"><span class="switch-track"></span></label>
+                  </div>
+                  <div class="admin-toggle-row">
+                    <div><strong>启用站内搜索</strong><p>允许访客检索知识、文章与项目。</p></div>
+                    <label class="switch"><input type="checkbox" checked aria-label="启用站内搜索"><span class="switch-track"></span></label>
+                  </div>
+                  <div class="admin-toggle-row">
+                    <div><strong>显示内容后台入口</strong><p>在页脚显示“内容后台（演示）”。</p></div>
+                    <label class="switch"><input type="checkbox" checked aria-label="显示内容后台入口"><span class="switch-track"></span></label>
+                  </div>
+                  <div class="admin-toggle-row">
+                    <div><strong>允许评论</strong><p>当前版本使用静态内容，不提供评论。</p></div>
+                    <label class="switch"><input type="checkbox" aria-label="允许评论"><span class="switch-track"></span></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-panel admin-form-panel" style="margin-top: 14px;">
+                <h2>内容规范</h2>
+                <p>用于提醒编辑团队的内部规则。</p>
+                <div class="admin-toggles">
+                  <div class="admin-toggle-row">
+                    <div><strong>政策内容必须附来源</strong><p>新文章默认启用来源核验检查。</p></div>
+                    <label class="switch"><input type="checkbox" checked aria-label="政策内容必须附来源"><span class="switch-track"></span></label>
+                  </div>
+                  <div class="admin-toggle-row">
+                    <div><strong>作者信息必须公开</strong><p>编辑内容需显示署名或编辑部标识。</p></div>
+                    <label class="switch"><input type="checkbox" checked aria-label="作者信息必须公开"><span class="switch-track"></span></label>
+                  </div>
+                </div>
+                <div class="admin-form-actions">
+                  <button class="btn btn--primary" type="submit">保存发布设置</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="admin-toast" role="status" aria-live="polite">
+    <svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg>
+    <span data-admin-toast-text>提示</span>
+  </div>
+</body>
+</html>
